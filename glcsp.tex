@@ -1,0 +1,736 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb, adjustbox, enumerate, amsbsy, stmaryrd}
+\usepackage{geometry}
+\geometry{a4paper,top=3cm,bottom=3cm,left=3.5cm,right=3.5cm}
+
+%\setcounter{tocdepth}{1}%delete the subsections in the contents
+
+
+\hyphenpenalty=5000
+\tolerance=1000
+
+
+
+\usepackage{amsfonts, amssymb, amscd}
+\numberwithin{equation}{section}
+
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{bm}
+\usepackage{verbatim}
+%\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{subfiles}
+\usepackage[toc,page]{appendix}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[all]{xy}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage{appendix}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    citecolor=red,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=red,
+}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+
+
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bA}{\mathbb{A}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\oE}{\overline{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bb}{\bm{b}}
+\newcommand{\Mm}{{\bf{M}}}
+\newcommand{\Bb}{{\bf{B}}}
+\newcommand{\PP}{{\bf{P}}}
+\newcommand{\NN}{{\bf{N}}}
+\newcommand{\Dd}{{\bf{D}}}
+\newcommand{\oY}{\overline{Y}}
+\newcommand{\oL}{\overline{L}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\ind}{\mathrm{ind}}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\Src}{\mathrm{Src}}
+\newcommand{\Spr}{\mathrm{Spr}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\exc}{\mathrm{exc}}
+
+
+
+\newcommand{\Cc}{\mathbb{C}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\Pp}{\mathbb{P}}
+\newcommand{\Qq}{\mathbb{Q}}
+\newcommand{\Nn}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\Zz}{\mathbb{Z}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\Oo}{\mathcal{O}}
+\newcommand{\Ii}{\Gamma}
+
+
+
+
+
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\alct}{a\operatorname{LCT}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Center}{\operatorname{center}}
+\newcommand{\Cone}{\operatorname{Cone}}
+\newcommand{\Exc}{\operatorname{Exc}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Fr}{\operatorname{Fr}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Mov}{\operatorname{Mov}}
+\newcommand{\Bir}{\operatorname{Bir}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\glct}{\operatorname{glct}}
+\newcommand{\GLCT}{\operatorname{GLCT}}
+\newcommand{\HH}{\operatorname{H}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\red}{\operatorname{red}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\lcg}{\operatorname{lcg}}
+\newcommand{\Nklt}{\operatorname{Nklt}}
+\newcommand{\mld}{{\rm{mld}}}
+\newcommand{\relin}{\operatorname{relin}}
+
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\expsing}{\mathrm{exp}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\Weil}{\operatorname{Weil}}
+\newcommand{\lct}{\operatorname{lct}}
+\newcommand{\LCT}{\operatorname{LCT}}
+\newcommand{\CR}{\operatorname{CR}}
+\newcommand{\proj}{\operatorname{Proj}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\Ngklt}{\operatorname{Ngklt}}
+\newcommand{\Nlc}{\operatorname{Nlc}}
+\newcommand{\Diff}{\operatorname{Diff}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\mult}{\operatorname{mult}}
+\newcommand{\Rct}{\operatorname{Rct}}
+\newcommand{\RCT}{\operatorname{RCT}}
+\newcommand{\Div}{\operatorname{Div}}
+\newcommand{\cont}{\operatorname{cont}}
+\newcommand{\Gal}{\operatorname{Gal}}
+%\newcommand{\Src}{\operatorname{Src}}
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\lf}{\lfloor}
+\newcommand{\rf}{\rfloor}
+
+
+
+
+
+\newcommand{\NE}{\mathrm{NE}}
+\newcommand{\Nef}{\mathrm{Nef}}
+\newcommand{\Sing}{\mathrm{Sing}}
+\newcommand{\Pic}{\mathrm{Pic}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\creg}{\mathrm{creg}}
+\newcommand\MLD{{\rm{MLD}}}
+\newcommand\FT{{\rm{FT}}}
+\newcommand{\crt}{{\rm{crt}}}
+\newcommand{\CRT}{{\rm{CRT}}}
+\newcommand{\Coeff}{{\rm{Coeff}}}
+\newcommand\coeff{{\rm{coeff}}}
+
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{exprop}[thm]{Example-Proposition}
+\newtheorem{claim}[thm]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{ques}[thm]{Question}
+\theoremstyle{definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remdef}[thm]{Remark-Definition}
+\newtheorem{defthm}[thm]{Definition-Theorem}
+\newtheorem{deflem}[thm]{Definition-Lemma}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{exlem}[thm]{Example-Lemma}
+\newtheorem{cons}[thm]{Construction}
+\newtheorem{cond}[thm]{Condition}
+\newtheorem{code}[thm]{Code}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{notation}{Notation ($\star$)}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+
+\begin{document}
+
+
+
+\title{Sarkisov program for glc generalized pairs}
+\author{Yifei Chen, Jihao Liu, Yanze Wang}
+
+
+%\address{Department of Mathematics, Northwestern University, 2033 Sheridan Rd, Evanston, IL 60208, USA}
+%\email{jliu@northwestern.edu}
+
+
+
+
+
+% \subjclass[2020]{14E30,14C20,14E05} TODO
+\date{\today}
+
+\begin{abstract}
+We prove the Sarkisov program for lc generalized pairs
+\end{abstract}
+
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+
+\begin{thm}\label{sp} 
+Let $(Z,\Phi)$ be a  pair such that $K_X+\Phi$ is not pseudo-effective. Assume that $\phi: X\rightarrow S$ and $\psi: Y\rightarrow T$ are two Mori fiber spaces which are obtained by running two different $(K_Z+\Phi)$-MMPs. Then the induced birational map $\sigma: X\dashrightarrow Y$ is a composition of Sarkisov links.
+\end{thm}
+
+\begin{thm}\label{main theorem}
+Assume that 
+\begin{itemize}
+    \item $W\rightarrow Z$ is a contraction between normal quasi-projective varieties,
+    \item $(W,B_W+M_W)$ is glc NQC g-pair with associated nef$/Z$ $\bb$-divisor $M$, such that $K_W+B_W+M_W$ is not pseudo-effective$/Z$,
+    \item $\rho_X: W\dashrightarrow X$ and $\rho_Y: W\dashrightarrow Y$ are two $(K_W+B_W+M_W)$-MMP$/Z$ such that $(\rho_X)_*(K_W+B_W+M_W)=K_X+B_X+M_X$ and $(\rho_Y)_*(K_W+B_W+M_W)=K_X+B_Y+M_Y$,
+    \item $\phi_X: X\rightarrow S_X$ is a $(K_X+B_X+M_X)$-Mori fiber space$/Z$ and $\phi_Y: X\rightarrow S_Y$ is a $(K_Y+B_Y+M_Y)$-Mori fiber space$/Z$.
+\end{itemize}
+\begin{center}$\xymatrix{
+ & W\ar@{-->}[dl]_{\rho_X}\ar@{-->}[dr]^{\rho_Y}& \\
+      X \ar@{->}[d]_{\phi_X}\ar@{-->}[rr]^{f}   &  & Y\ar@{->}[d]^{\phi_Y} \\
+    S_X & &S_Y }$
+\end{center}
+Then
+\begin{enumerate}
+    \item the induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$, and
+    % \item for any real number $\epsilon>0$, if $(W,B_W+M_W)$ is generalized $\epsilon$-lc, then $(X_i,B_i+M_{X_i})$ is generalized $\epsilon$-lc for every $i$, where each $B_i$ is the birational transform of $B_W$ on $X_i$.
+\end{enumerate} 
+\end{thm}
+TODO: NOT $\epsilon$-lc
+% TODO: NOT $\epsilon$-lc
+
+\section{Notation and Conventions}
+
+We adopt the standard notation and definitions in \cite{Sho92} and \cite{KM98}, and will freely use them.
+
+\begin{defn}[$\bb$-divisors] Let $X$ be a normal quasi-projective variety. A $\bb$-$\Rr$ Cartier $\bb$-divisor ($\bb$-divisor for short) over $X$ is the choice of a projective birational morphism $Y\to X$ from a normal quasi-projective variety $Y$ and an $\Rr$-Cartier $\mathbb R$-divisor $M$ on $Y$ up to the following equivalence: another projective birational morphism $Y'\to X$ from a normal quasi-projective variety and an $\Rr$-Cartier $\Rr$-divisor $M'$ defines the same $\bb$-divisor if there is a common resolution $W\to Y$ and $W\to Y'$ on which the pullback of $M$ and $M'$ coincide. If there is a choice of birational morphism $Y\rightarrow X$ such that the corresponding $\Rr$-Cartier $\Rr$-divisor $M$ is a prime divisor, the $\bb$-divisor is called \emph{prime}.
+
+	Let $E$ be a prime $\bb$-divisor over $X$. The \emph{center} of $E$ on $X$ is the closure of its image on $X$, and is denoted by $c_X(E)$. If $c_X(E)$ is not a divisor, $E$ is called \emph{exceptional}$/X$. If $c_X(E)$ is a divisor, we say that $E$ is \emph{on} $X$. For any $\bb$-divisor $M=\sum a_iE_i$ over $X$, where $E_i$ are prime $\bb$-divisors over $X$, we define $M_X:=\sum a_ic_X(E_i)$ to be the $\Rr$-divisor where the sum is taken over all the prime $\bb$-divisors $E_i$ which are on $X$. If all the $E_i$ are on $X$, we say that $M$ is \emph{on} $X$. 
+\end{defn}
+
+\begin{defn}[Multiplicities] Let $X$ be a normal quasi-projective variety, $E$ a prime divisor on $X$ and $D$ an $\Rr$-divisor on $X$. We define $\mult_ED$ to be the multiplicity of $E$ along $D$. 
+Let $F$ be a prime $\bb$-divisor over $X$, $B$ an $\Rr$-Cartier $\Rr$-divisor on $X$ and $\phi: Y\to X$ a birational morphism such that $F$ is on $Y$. We define $\mult_FD:=\mult_F\phi^*D$.
+\end{defn}
+
+
+\begin{defn} Let $f: X\dashrightarrow Y$ a birational map between normal quasi-projective varieties, $p: W\rightarrow X$ and $q: W\rightarrow Y$ a resolution of indeterminacy of $f$, and $D$ an $\Rr$-Cartier $\Rr$-divisor on $X$ such that $D_Y:=f_*D$ is an $\Rr$-Cartier $\Rr$-divisor on $Y$. $f$ is called \emph{$D$-non-positive} (resp. \emph{$D$-negative}), if
+\begin{itemize}
+    \item $f$ does not extract any divisor, and
+    \item $p^*D=q^*D_Y+E$, where $E\geq 0$ is exceptional$/Y$ (resp. $E\geq 0$ is exceptional$/Y$, and $\Supp p_*E$ contains all $f$-exceptional divisors). 
+\end{itemize}
+\end{defn}
+
+\begin{defn} Let $X$ be a normal quasi-projective variety. We define $\operatorname{WDiv}_{\mathbb{R}}(X)$ to be the $\Rr$-vector space spanned by all Weil divisors on $X$. Let $\mathcal{V}$ be a finite dimensional subspace of $\Weil_{\Rr}(X)$ and $A\in\mathcal{V}$ an $\mathbb R$-divisor. We define 
+  \[
+    \mathcal{L}_{A}(\mathcal{V}):=\{B\mid(X,B) \text{ is lc, } B=A+B', B'\geq 0, B'\in \mathcal{V}\}\subset \operatorname{WDiv}_{\Rr}(X)
+  \]
+By \cite[Lemma 3.7.2]{BCHM10}, if $\mathcal{V}$ is a rational subspace, then $\mathcal{L}_{A}(\mathcal{V})$ is a rational polytope.
+\end{defn}
+
+
+
+\begin{defn}
+A \emph{contraction} is a projective morphism $f:X\to Z$ between normal quasi-projective varieties such that $f_{*}\Oo_X=\Oo_Z$. 
+
+For any $\bb$-divisor $M$ over $X$, $M$ is called nef$/Z$ if there is a projective morphism $Y\rightarrow X$ such that $M$ is on $Y$ and $M_Y$ is nef$/Z$.
+\end{defn}
+
+
+\begin{defn}\label{defn: gpair} A \emph{generalized pair} (\emph{g-pair} for short) consists of a normal quasi-projective variety $X$, an effective $\Rr$-divisor $B$ on $X$, a contraction $X\rightarrow Z$, and a $\bb$-divisor $M$ over $X$ such that $M$ is nef$/Z$. If there is no confusion, we usually say that $(X,B+M_X)$ is a generalized pair$/Z$. $M$ is called the \emph{associated nef$/Z$ $\bb$-divisor} of the generalized pair $(X,B+M_X)$. If $Z$ is not important, we may omit $Z$ and say that $(X,B+M_X)$ is a generalized pair.
+
+Let $(X,B+M_X)$ be a generalized pair$/Z$ with associated nef$/Z$ $\bb$-divisor $M$. Let $\phi:W\to X$
+	be a log resolution of $(X,B)$ such that $M_W=M$ (i.e. $M$ is the choice of $M_W$ and the morphism $\phi$) and
+	$$K_W+B_W+M_W:=\phi^{*}(K_X+B+M_X).$$
+	The \emph{generalized log discrepancy} of a prime divisor $D$ on $W$ with respect to $(X,B+M_X)$ is $1-\mult_{D}B_W$ and is denoted by $a(D,X,B+M_X).$ For any prime $\bb$-divisor $E$ over $X$, let $Y\rightarrow X$ be a birational morphism such that $E_Y$ is a prime divisor.  The \emph{generalized log discrepancy} of $E$ with respect to $(X,B+M_X)$ is $a(E_Y,X,B+M_X)$.
+	For any real number $\epsilon\geq 0$, we say that
+	\begin{itemize}
+	    \item $(X,B+M_X)$ is \emph{glc} (resp. \emph{gklt}, $\epsilon$-\emph{glc}) if $a(E,X,B)\ge0$ (resp. $>0$, $\ge\epsilon$) for every prime $\bb$-divisor $E$ over $X$,
+	    \item  $(X,B+M_X)$ is \emph{g-terminal} if $a(E,X,B)>1$ for every exceptional$/X$ prime $\bb$-divisor $E$,
+	    \item $(X,B+M_X)$ is \emph{gdlt} if there exists an open subset $U \subseteq X$ such that $(U,B|_U)$ is a log smooth pair, and if $ a(E,X,B+M) = 0 $ for some prime $\bb$-divisor $E$  over $X$, then $ c_X(E) \cap U \neq \emptyset $ and $ c_X(E) \cap U $ is an lc center of $(U,B|_U)$,
+	    \item $(X,B+M_X)$ is \emph{$\Qq$-factorial} if every $\Qq$-divisor on $X$ is $\Qq$-Cartier.
+	\end{itemize}
+\end{defn}
+% TODO: gdlt and klt
+\begin{remark}
+  If $(X,B,M)$ is gdlt g-pair, then $X$ is klt.
+\end{remark}
+
+A \emph{generalized terminalization} of a glc g-pair $(X,B+M_X)$ is a birational morphism $f: Y\rightarrow X$ satisfying the following.
+\begin{itemize}
+    \item $K_Y+B_Y+M_Y=f^*(K_X+B+M_X)$,
+    \item $(Y,B_Y+M_Y)$ is $\Qq$-factorial g-terminal,
+    \item $f$ only extracts prime $\bb$-divisors $E$ over $X$ such that $0\leq a(E,X,B+M)\leq 1$.
+\end{itemize}
+
+
+\begin{defn}
+Assume that
+\begin{itemize}
+    \item $X\rightarrow Z$ and $Y\rightarrow Z$ are two contractions,
+    \item $(X,B+M_X)$ and $(Y,B_Y+M_Y)$ are two g-pairs$/Z$ with the same associated nef$/Z$ $\bb$-divisor $M$, and
+    \item $f: X\dashrightarrow Y$ is a birational map$/Z$,
+\end{itemize}
+such that
+\begin{itemize}
+    \item $f$ does not extract any divisor, and
+    \item $a(E,X,B+M_X)\leq a(E,Y,B_Y+M_Y)$ for every prime $\bb$-divisor $E$ over $X$,
+\end{itemize}
+then we may write $(X,B+M_X)\geq (Y,B_Y+M_Y)$.
+\end{defn}
+
+TODO: maybe only consider the divisor $E$ on $Y$.  
+% TODO: maybe only consider the divisor $E$ on $Y$.  
+
+\section{Preliminaries}
+
+	\begin{lem}[dlt modification, {\cite[Proposition 3.10]{HL22}}]\label{lem: dlt modification}
+		Let $ (X,B+M) $ be an lc g-pair with data $ W \xrightarrow{f} X \to Z $ and $ M_W $. Then, after possibly replacing $ f $ with a higher model, there exist a $\mathbb{Q}$-factorial dlt g-pair $(X',B'+M')$ with data $ W \xrightarrow{g}  X' \to Z $ and $ M_W $, and a projective birational morphism $ h \colon X' \to X $ such that 
+		\[ K_{X'} + B' + M' \sim_\mathbb{R} h^* (K_X + B + M) \quad \text{and} \quad B' = h_*^{-1} B + E , \]
+		where $ E $ is the sum of all $ h $-exceptional prime divisors on $ X' $. The g-pair $(X',B'+M')$ is called a \emph{dlt blow-up} of $(X,B+M)$.
+	\end{lem}
+
+\begin{thm}[contraction extremal faces]\label{thm: contraction extremal face glc}
+  contraction faces
+\end{thm}
+
+	% \begin{thm}\label{thm:EGMM_boundary_contains_ample}
+\begin{thm}[MMP for glc gpairs, {\cite[Theorem 4.4]{TX23}}]\label{thm: gen pair mmp}
+		Let $ \big( X/Z,(B+A)+M \big) $ be an NQC lc g-pair, where $ A $ is an effective $ \mathbb{R} $-Cartier $\mathbb{R}$-divisor which is ample over $ Z $. If the divisor $K_X+B+A+M$ is pseudo-effective over $Z$, then there exists a $(K_X+B+A+M)$-MMP over $Z$ which terminates with a good minimal model of $ \big( X,(B+A)+M \big) $ over $ Z $.
+\end{thm}
+
+
+\begin{thm}[extract a divisor, {\cite[Theorem 1.7]{LX22b}}]\label{lem: extracting divisor}
+Let $(X,B,\Mm)$ be a glc g-pair, and $E$ a prime divisor that is exceptional over $X$ such that $a(E,X,B,\Mm)\in [0,1)$. Then there exists a birational morphism $f: Z\to X$ which extracts $E$ such that $-E$ is ample over $X$.
+\end{thm}
+\begin{remark}
+  Furthermore, we have 
+  \[
+  K_{Z}+f^{-1}_{*}B+(1-a)E_{Z}+M_{Z}=f^*(K_{X}+B+M_{X}) 
+\]
+\end{remark}
+
+\section{Double scaling}
+In this section we construct a special type of Sarkisov program, called the ``Sarkisov program with double scaling". As the notation is complicated and technical, we first illustrate our ideas.
+
+First, recall the typical structure of the Sarkisov program as in Theorem \ref{main theorem}. Possibly replacing $W$, we may assume that $\rho_X$ and $\rho_Y$ are morphisms:
+\begin{center}$\xymatrix{
+ & W\ar@{->}[dl]_{\rho_X}\ar@{->}[dr]^{\rho_Y}& \\
+      X \ar@{->}[d]_{\phi_X}\ar@{-->}[rr]^{f}   &  & Y\ar@{->}[d]^{\phi_Y} \\
+    S_X & &S_Y }$
+\end{center}
+Here $\phi_X: X\rightarrow S_X$ is a $(K_X+B_X+M_X)$-Mori fiber space$/Z$ and $\phi_Y: Y\rightarrow S_Y$ is a $(K_Y+B_Y+M_Y)$-Mori fiber space$/Z$. 
+
+We need to study the difference and similarity between $\phi_X: X\rightarrow S_X$ and $\phi_Y: Y\rightarrow S_Y$. A common strategy in birational geometry is to study the ample divisors on $X$ and $Y$. This works well in our setting, as $-(K_X+B_X+M_X)$ is ample over $S_X$ and  $-(K_Y+B_Y+M_Y)$ is ample over $S_Y$. Therefore, we may pick general ample$/Z$ $\Rr$-divisors $L_X$ and $H_Y$ on $X$ and $Y$ respectively, such that
+\begin{itemize}
+    \item $L_X\sim_{\Rr,Z}-(K_X+B_X+M_X)+\phi_X^*A_{S_X}$ and
+    \item $H_Y\sim_{\Rr,Z}-(K_Y+B_Y+M_Y)+\phi_Y^*A_{S_Y}$, 
+\end{itemize}
+for some general ample $\Rr$-divisors $A_{S_X}$ and $A_{S_Y}$ on $S_X$ and $S_Y$ respectively. In particular, $L_W:=\rho_X^*L_X$ and $H_W:=\rho_Y^*H_Y$ are big and nef$/Z$, and we may define $H_X:=(\rho_X)_*H_W$ and $L_Y:=(\rho_Y)_*L_W$. We have
+\begin{itemize}
+    \item $K_X+B_X+L_X+0H_Y+M_X\sim_{\mathbb R,S_X}0$, and
+    \item $K_Y+B_Y+0L_Y+H_Y+M_Y\sim_{\mathbb R,S_Y}0$.
+
+\end{itemize}
+
+\subsection{Construct a Sarkisov link}
+
+\begin{cons}[Setting]\label{cons: setting for sarkisov link}
+This setting will be used in the rest of this section. We assume that
+\begin{itemize}
+    \item $X\rightarrow Z$ is a contraction,
+    \item $\rho: W\dashrightarrow X$ is a birational map,
+    \item $(W,B_W+M_W)$ is a g-pair with associated nef$/Z$ $\bb$-divisor $M$,
+    \item $L_W$ and $H_W$ are two general big and nef$/Z$ $\Rr$-divisors on $W$, 
+    \item $(X,B+M_X)$ is a g-pair, 
+    \item $\phi: X\rightarrow S$ is a $(K_X+B+M_X)$-Mori fiber space$/Z$,
+    \item $\Sigma$ is a $\phi$-vertical curve,
+    \item $L$ and $H$ are two $\Rr$-Cartier $\Rr$-divisors on $X$, and
+    \item $0<l\leq 1$ and $0\leq h\leq 1$ are two real numbers,
+\end{itemize} 
+such that
+\begin{enumerate}
+    \item $(W,B_W+2(L_W+H_W)+M_W)$ is $\Qq$-factorial g-terminal, 
+    \item Maybe $(W,B_W+2(L_W+H_W)+M_W)$ is glc and log smooth, 
+      % TODO: other "terminalization"
+    \item $K_W+B_W+H_W+M_W$ is pseudo-effective$/Z$,
+    \item $(X,B+M_X)$ is glc,
+    \item $(W,B_W+lL_W+hH_W+M_W)\geq (X,B+lL+hH+M_X)$. In particular, $\rho$ does not extract any divisor,
+    \item $B,L$ and $H$ are the birational transforms of $B_W,L_W$ and $H_W$ on $X$ respectively,
+    \item $K_X+B+lL+hH+M_X\sim_{\mathbb R,S}0$, and
+    \item $K_X+B+lL+hH+M_X$ is nef$/Z$.
+\end{enumerate}
+We illustrate this setting in the following diagram:
+\medskip
+
+\begin{center}$\xymatrix{
+  W\ar@{-->}[d]_{\rho}&\supset & B_W\ar@{-->}[d] &lL_W\ar@{-->}[d] &hH_W\ar@{-->}[d] &M_W\ar@{-->}[d] &\\
+      X \ar@{->}[d]^{\phi}&\supset & B &lL &hH &M_X  &\Sigma:\phi\text{-vertical}    \\
+    S & }$
+\end{center}
+\end{cons}
+
+\begin{defn}[Auxiliary constants and divisors]\label{defn: auxiliary invariants}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link},
+\begin{enumerate}
+    \item we define $$r:=\frac{H\cdot\Sigma}{L\cdot\Sigma}.$$
+    \item For any real number $t$, we define
+    $$B_W(t):=B_W+lL_W+hH_W+t(H_W-rL_W),$$ 
+and 
+$$B(t):=B+lL+hH+t(H-rL).$$
+\item We define $\Gamma$ to be the set of all real number $t$ satisfying the following:
+\begin{enumerate}
+    \item $0\leq t\leq\frac{l}{r}$,
+        \item for any prime divisor $E\subset W$,
+    $$a(E,W,B_W(t)+M_W)\leq a(E,X,B(t)+M_X),$$
+    and
+    \item $K_X+B(t)+M_X$ is nef$/Z$.
+\end{enumerate}
+\item We define $s:=\sup\{t\mid t\in\Gamma\}$.
+\item We define $l_Y:=l-rs$ and $h_Y:=h+s$.
+\end{enumerate}
+\end{defn}
+
+\begin{remark}
+  We can run MMP on $X$. 
+\end{remark}
+
+\begin{lem}\label{lem: sarkisov h<=1}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link} and Definition \ref{defn: auxiliary invariants}, then 
+\begin{enumerate}
+\item $r>0$ is well-defined,
+    \item either $\Ii=\{0\}$, or $\Ii$ is a closed interval,
+    \item $\Ii$ is non-empty and $s\in\Ii$, 
+    \item $l_Y=l$ if and only if $h_Y=h$, and
+    \item $\Ii\subset [0,1-h]$. In particular, $h_Y\leq 1$.
+\end{enumerate}
+\end{lem}
+
+TODO: proof $h_{Y}\leq 1$
+% TODO: proof $h_{Y}\leq 1$
+\begin{proof}
+Since $L_W$ and $H_W$ are general big and nef$/Z$ divisors on $W$, $L$ and $H$ are big$/Z$, hence ample$/S$. Thus $H\cdot\Sigma>0$ and $L\cdot\Sigma>0$, hence $r>0$ is well-defined. This is (1).
+
+By Definition \ref{defn: auxiliary invariants}(3), $0\in\Ii$ and $\Ii$ is closed and connected, which implies (2). (3) follows from (2) and the definition of $s$. (4) follows from (1) and the definitions of $l_Y$ and $h_Y$.
+
+
+
+Assume that (5) does not hold. By (2), there exists $t_0\in\Ii$ such that $1<h+t_0<2$. By Construction of terminalization, $(W,B_W(t_0)+M_W)$ is g-terminal.
+
+By Proposition terminalization and the definition of $\Ii$, $(W,B_W(t_0)+M_W)\geq (X,B(t_0)+M_X)$. Therefore $(X,B(t_0)+M_X)$ is gklt.
+
+This is not necessary? Yes.
+
+Since $(K_X+B(t_0)+M_X)\cdot\Sigma=0$ and $H$ is big$/Z$, 
+$$(K_X+B+(l-t_0r)L+H+M_X)\cdot\Sigma=((K_X+B(t_0)+M_X)-(h+t_0-1)H)\cdot\Sigma<0.$$
+Thus $\phi$ is a $(K_X+B+(l-t_0r)L+H+M_X)$-Mori fiber space$/Z$. In particular, $K_X+B+H+M_X$ is not pseudo-effective$/Z$. Since $\rho$ does not extract any divisor, $K_W+B_W+H_W+M_W$ is not pseudo-effective$/Z$, which contradicts Construction \ref{cons: setting for sarkisov link}(2).
+\end{proof}
+
+\begin{cons}\label{cons: cases of sarkisov link with scaling}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link} and Definition \ref{defn: auxiliary invariants}. Then there are three possibilities for $s$:
+\begin{itemize}
+   \item[\textbf{Case 1}] $s=\frac{l}{r}$. In particular, $l_Y=0.$
+    \item[\textbf{Case 2}] 
+    \begin{itemize}
+        \item $s<\frac{l}{r}$. In particular, $l_Y>0$, and 
+        \item there exists $0<\epsilon\ll 1$ and a prime divisor $E\subset W$, such that $a(E,W,B_W(s+\epsilon)+M_W)>a(E,X,B(s+\epsilon)+M_X).$
+    \end{itemize}
+        \item[\textbf{Case 3}] 
+    \begin{itemize}
+        \item $s<\frac{l}{r}$. In particular, $l_Y>0$, and 
+        \item there exists $0<\epsilon\ll 1$, such that 
+        \begin{itemize}
+            \item $a(E,W,B_W(s+\epsilon)+M_W)\leq a(E,X,B(s+\epsilon)+M_X)$ for any prime divisor $E\subset W$, and
+            \item $K_X+B(s+\epsilon)+M_X$ is not nef$/Z$.
+        \end{itemize} 
+    \end{itemize}
+\end{itemize}
+\end{cons}
+
+TODO: replace terminal singularity
+% TODO: replace terminal singularity
+
+\begin{thm}[Sarkisov link with double scaling]\label{thm: scaling sarkisov}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link} and Definition \ref{defn: auxiliary invariants}. The there exist
+\begin{itemize}
+    \item a birational map$/Z$ $\rho_Y: W\dashrightarrow Y$ which does not extract any divisor,
+    \item three $\Rr$-divisors $B_Y,L_Y$ and $H_Y$ on $Y$,
+    \item a $(K_Y+B_Y+M_Y)$-Mori fiber space$/Z$ $\phi_Y:Y\rightarrow S_Y$, and
+    \item a Sarkisov link$/Z$ $f: X\dashrightarrow Y$,
+\end{itemize}
+such that
+\begin{enumerate}
+\item $(Y,B_Y+M_Y)$ is a $\Qq$-factorial gklt g-pair$/Z$,
+    \item $(W,B_W+l_YL_W+h_YH_W+M_W)\geq (Y,B_Y+l_YL_Y+h_YH_Y+M_Y)$. In particular, $\rho_Y$ does not extract any divisor,
+    \item $B_Y,L_Y$ and $H_Y$ are the birational transforms of $B_W,L_W$ and $H_W$ on $Y$ respectively,
+    \item $K_Y+B_Y+l_YL_Y+h_YH_Y+M_Y\sim_{\Rr,S_Y}0$, 
+    \item $K_Y+B_Y+l_YL_Y+h_YH_Y+M_Y$ is nef$/Z$, 
+    \item for any $\phi_Y$-vertical curve $\Sigma_Y$ on $Y$, and $r=\frac{H\cdot\Sigma}{L\cdot\Sigma}\geq\frac{H_Y\cdot\Sigma_Y}{L_Y\cdot\Sigma_Y}>0$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+
+We prove the Theorem by considering the three different cases in Construction \ref{cons: cases of sarkisov link with scaling} separately.
+
+\medskip
+
+\noindent\textbf{Case 1}. In this case, we finish the proof by letting $\rho_Y:=\rho, Y:=X, B_Y:=B, L_Y:=L, H_Y:=H, M_Y:=M_X, \phi_Y:=\phi_X, S_Y:=S$, and $f:=\id_X$.
+
+\medskip
+
+\noindent\textbf{Case 2}. In this case, $a(E,W,B_W(s)+M_W)=a(E,X,B(s)+M_X),$ and $E$ is exceptional$/X$. Since $E\subset W$, $$a(E,X,B(s+\epsilon)+M_X)<a(E,W,B_W(s+\epsilon)+M_W)\leq 1.$$
+% TODO: replace the terminalization 
+ TODO: replace the terminalization 
+
+By Lemma \ref{lem: extracting divisor}, there is an extraction $g: V\rightarrow X$ of $E$ such that $V$ is $\Qq$-factorial. By Proposition terminal(4), the induced birational map $W\dashrightarrow V$ does not extract any divisor. We let $B_V,L_V,H_V$ be the birational transforms of $B_W,L_W$ and $H_W$ on $V$ respectively, then we have
+\begin{align*}
+    &K_V+B_V+(l_Y-r\epsilon)L_V+(h_Y+\epsilon)H_V+M_V\\
+    =&g^*(K_X+B+(l_Y-r\epsilon)L+(h_Y+\epsilon)H+M_X).
+\end{align*}
+Moreover, since $a(E,X,B(s+\epsilon)+M_X)<1$, $\mult_E(B_V+(l_Y-r\epsilon)L_V+(h_Y+\epsilon)H_V)>0$. Thus we may pick a sufficiently small positive real number $0<\delta\ll\epsilon$, such that 
+$(V,\Delta_V+M_V)$ is gklt, where
+$$K_V+\Delta_V+M_V:=g^*(K_X+B+(l_Y-r\epsilon-\delta)L+(h_Y+\epsilon)H+M_X).$$
+We may run a $(K_V+\Delta_V+M_V)$-MMP$/S$ $\psi: V\dashrightarrow Y$ which terminates with a Mori fiber space$/S$ $\phi_Y: Y\rightarrow S_Y$ by Theorem \ref{thm: gen pair mmp}. Since $\rho(V/S)=\rho(V/X)+\rho(X/S)=2$ and $1=\rho(Y/S_Y)\leq\rho(V/S_Y)\leq\rho(V/S)$, there are two possibilities:
+
+\medskip
+
+\noindent\textbf{Case 2.1}. $\rho(V/Y)=0$. In this case $\psi$ is a sequence of flips, and we get a Sarkisov link$/Z$ $f:X\dashrightarrow Y$ of type I. Let $B_Y,L_Y$ and $H_Y$ be the birational transforms of $B_V,L_V$ and $H_V$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $\psi$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_V$ be the birational transform of $\Sigma_Y$ on $V$. Pick any $0<\delta'\ll\delta$ and let
+$$K_V+\Delta'_V+M_V:=g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X),$$
+then $\psi$ is also a $(K_V+\Delta'_V+M_V)$-MMP$/S$. Let $\Delta_Y'$ be the birational transform of $\Delta'_V$ on $Y$. Then
+\begin{align*}
+&g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\\
+=&(K_Y+\Delta_Y'+M_Y)\cdot\Sigma_Y<0
+\end{align*}
+Let $\delta'\rightarrow 0$, then we have
+$$g^*(K_X+B+(l_Y-r\epsilon)L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\leq 0.$$
+Since $g^*(K_X+B+l_YL+h_YH+M_X)\sim_{\mathbb R,S}0$, we deduce that
+$$g^*(H-rL)\cdot\Sigma_V\leq 0.$$
+Moreover, by our assumptions, $g^*(H-rL)=g^{-1}_*(H-rL)+eE$ for some real number $e>0$, and $\Sigma_V\not\subset E$. Thus
+\begin{align*}
+    (H_Y-rL_Y)\cdot\Sigma_Y&=g^{-1}_*(H-rL)\cdot\Sigma_V=(g^*(H-rL)-eE)\cdot\Sigma_V\\
+    &\leq g^*(H-rL)\cdot\Sigma_V\leq 0,
+\end{align*}
+which implies (6), and the theorem follows in this case.
+
+\medskip
+
+% \noindent\textbf{Case 2.2}. $\rho(V/Y)=1$. In this case, suppose that $U\rightarrow U'$ is the first divisorial contraction in $\psi$. Then $\rho(U'/S_Y)=\rho(U'/S)=1$, which implies that $U‘\rightarrow S$ is a Mori fiber space. Thus $U'=Y$ and $S\cong S_Y$, and the induced birational map $f:X\dashrightarrow Y$ is a Sarkisov link$/Z$ of type II. Let $B_Y,L_Y,H_Y$ be the birational transforms of $B_V,L_V$ and $H_V$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $\psi$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_V$ be the birational transform of $\Sigma_Y$ on $V$. Pick any $0<\delta'\ll\delta$ and let
+$$K_V+\Delta'_V+M_V:=g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X),$$
+then $\psi$ is also a $(K_V+\Delta'_V+M_V)$-MMP$/S$. Let $\Delta_Y'$ be the birational transform of $\Delta'_V$ on $Y$. Then
+\begin{align*}
+&g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\\
+=&(K_Y+\Delta_Y'+M_Y)\cdot\Sigma_Y<0
+\end{align*}
+Let $\delta'\rightarrow 0$, then we have
+$$g^*(K_X+B+(l_Y-r\epsilon)L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\leq 0.$$
+Since $g^*(K_X+B+l_YL+h_YH+M_X)\sim_{\mathbb R,S}0$, we deduce that
+$$g^*(H-rL)\cdot\Sigma_V\leq 0.$$
+Moreover, by our assumptions, $g^*(H-rL)=g^{-1}_*(H-rL)+eE$ for some real number $e>0$, and $\Sigma_V\not\subset E$. Thus
+\begin{align*}
+    (H_Y-rL_Y)\cdot\Sigma_Y&=g^{-1}_*(H-rL)\cdot\Sigma_V=(g^*(H-rL)-eE)\cdot\Sigma_V\\
+    &\leq g^*(H-rL)\cdot\Sigma_V\leq 0,
+\end{align*}
+which implies (6), and the theorem follows in this case.
+
+\medskip
+
+\noindent\textbf{Case 3}. In this case, there exists a $(K_X+B(s+\epsilon)+M_X)$-negative extremal ray $[C]$ on $X$. Since $(K_X+B(s+\epsilon)+M_X)\cdot\Sigma=0$, $[C]\not=[\Sigma]$. Let $P\subset\overline{NE}(X/Z)$ be the extremal face over $Z$ defined by all $(K_X+B(s+\epsilon)+M_X)$-non-positive irreducible curves. Then $P\not=[\Sigma]$, and hence there exists an extremal ray $[\Pi]$ such that $[\Sigma]$ and $[\Pi]$ span a two-dimensional face of $P$. By our construction, $(K_X+B(s+\epsilon)+M_X)\cdot\Pi<0$. Now for $0<\delta\ll 1$, we have
+$$(K_X+B+(l_Y-r\epsilon-\delta)L_X+(h_Y+\epsilon)H_X+M_X)\cdot\Sigma<0$$
+and
+$$(K_X+B+(l_Y-r\epsilon-\delta)L_X+(h_Y+\epsilon)H_X+M_X)\cdot\Pi<0.$$
+By Theorem \ref{thm: contraction extremal face glc}, there exists a contraction $\pi: X\rightarrow T$ of the extremal face of $\overline{NE}(X/Z)$ spanned by $[\Sigma]$ and $[\Pi]$. Then $\pi$ factors through $S$, and  $K_X+B(s)+M_X\sim_{\Rr,T}0$.
+
+Since $L,H$ are big$/Z$, $L,H$ are big$/T$. Therefore, if $K_{X}+B(s+\epsilon)+M_X$ is pseudo-effective$/T$, then $K_X+(1+\alpha)B(s+\epsilon)+M_X$ is big$/T$. By Theorem \ref{thm: gen pair mmp}, we may run a $(K_{X}+B(s+\epsilon)+M_X)$-MMP$/T$ with scaling of some ample$/T$ divisor, and this MMP$/T$ terminates. There are three cases:
+
+\medskip
+
+
+\noindent\textbf{Case 3.1}. After a sequence of flips $f: X\dashrightarrow Y$, the MMP$/T$ terminates with a Mori fiber space$/T$ $\phi_Y: Y\rightarrow S_Y$. Therefore, $f$ is a Sarkisov link$/Z$ of type IV.  Let $B_Y,L_Y,H_Y$ be the birational transforms of $B,L$ and $H$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $f$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_X$ be the birational transform of $\Sigma_Y$ on $X$. Since $\phi_Y$ is a $(K_Y+B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y+M_Y)$-Mori fiber space$/T$, 
+$$-(K_Y+B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y+M_Y)\cdot\Sigma_Y>0,$$
+which implies that
+$$-(K_X+B(s+\epsilon)+M_X)\cdot\Sigma_X>0.$$
+Since $K_X+B(s)+M_X\sim_{\Rr,T}0$, 
+$$-(K_X+B(s)+M_X)\cdot\Sigma_X=0,$$
+which implies that 
+$$(H_Y-rL_Y)\cdot\Sigma_Y=(H-rL)\cdot\Sigma_X<0.$$ 
+Thus $r>\frac{H_Y\cdot\Sigma_Y}{L_Y\cdot\Sigma_Y}$, which implies (6), and the theorem follows in this case.
+
+\medskip
+
+\noindent\textbf{Case 3.2}. After a sequence of flips $X\dashrightarrow U$, we get a divisorial contraction$/T$: $U\rightarrow Y$. Therefore $\rho(Y/T)=1$, which implies that the induced morphism $\phi_Y:=Y\rightarrow T$ is a Mori fiber space, and the induced birational map $f: X\dashrightarrow Y$ is a Sarkisov link$/Z$ of type III. Let $B_Y,L_Y,H_Y$ be the birational transforms of $B,L$ and $H$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $f$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_X$ be the birational transform of $\Sigma_Y$ on $X$. Since $-(K_X+B(s+\epsilon)+M_X)$ is nef$/T$ and $K_X+B(s)+M_X\sim_{\Rr,T}0$, we have
+$$-(K_X+B(s+\epsilon)+M_X)\cdot\Sigma_X\geq 0=-(K_X+B(s)+M_X)\cdot\Sigma_X,$$
+which implies that 
+$$(H_Y-rL_Y)\cdot\Sigma_Y=(H-rL)\cdot\Sigma_X\leq 0.$$ 
+Thus $r\geq\frac{H_Y\cdot\Sigma_Y}{L_Y\cdot\Sigma_Y}$, which implies (6), and the theorem follows in this case.
+
+\medskip
+
+\noindent\textbf{Case 3.3}. After a sequence of flips $f: X\dashrightarrow Y$, the MMP terminates with a minimal model $Y$ over $T$. Let $B_Y,L_Y,H_Y$ be the birational transforms of $B,L$ and $H$ on $Y$ respectively. Since $\Sigma$ is a general $\phi$-vertical curve, we may let $\Sigma'$ be the birational transform of $\Sigma$ on $Y$. Since $(K_{X}+B(s+\epsilon)+M_X)\cdot\Sigma=0$ and $(K_{X}+B(s)+M_X)\cdot\Sigma=0$, we have
+$$(K_Y+B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y+M_Y)\cdot\Sigma'=0$$
+and
+$$(K_Y+B_Y+l_YL_Y+h_YH_Y+M_Y)\cdot\Sigma'=0$$
+which implies that $(K_Y+B_Y+M_Y)\cdot\Sigma'<0$ and $r=\frac{H_Y\cdot\Sigma'}{L_Y\cdot\Sigma'}$. Since $\Sigma$ can be chosen to be any $\phi$-vertical curve, by Theorem \ref{thm: contraction extremal face glc}, there exists a contraction $\phi_Y:Y\rightarrow S_Y$ of $[\Sigma']$ such that $\phi_Y$ is a $(K_Y+B_Y+M_Y)$-Mori fiber space$/T$. Thus $f$ is a Sarkisov link$/Z$ of type IV.  We finish the proof by letting $\rho_Y: W\dashrightarrow Y$ be the induced birational map.
+\end{proof}
+
+\subsection{Behavior of invariants under a Sarkisov lins}
+
+\subsection{Run the Sarkisov program with double scaling}
+
+Construction
+
+Lemma of termination.
+
+\section{Proof of main theorem}
+
+
+
+\begin{thebibliography}{ABCDE}
+
+\bibitem[Amb03]{Amb03} F. Ambro, \textit{Quasi-log varieties}, Tr. Mat. Inst. Steklova \textbf{240} (2003), Biratsion. Geom. Linein. Sist. Konechno Porozhdennye Algebry, 220--239; translation in Proc. Steklov Inst. Math. \textbf{240} (2003), no. 1, 214--233.
+
+\bibitem[Bir12]{Bir12} C. Birkar, \textit{Existence of log canonical flips and a special LMMP}, Pub. Math. IHES., \textbf{115} (2012), 325--368.
+
+%\bibitem[Bir19]{Bir19} C. Birkar, \textit{Anti-pluricanonical systems on Fano varieties}. Ann. of Math. (2), \textbf{190} (2019), 345--463.
+
+\bibitem[Bir20]{Bir20} C. Birkar, \textit{On connectedness of non-klt loci of singularities of pairs}, arXiv:2010.08226v2, to appear in J. Differential Geom.
+
+%\bibitem[Bir21a]{Bir21a}
+%C.~Birkar, \textit{Singularities of linear systems and boundedness of {F}ano varieties}, Ann. of Math. \textbf{193} (2021), no. 2, 347--405.
+
+\bibitem[Bir21]{Bir21}  C. Birkar, \textit{Generalised pairs in birational geometry}, EMS Surv. Math. Sci. \textbf{8} (2021), 5--24.
+	
+\bibitem[BCHM10]{BCHM10}
+C. Birkar, P. Cascini, C. D. Hacon and J. M\textsuperscript{c}Kernan, \textit{Existence of minimal models for varieties of log general type}, J. Amer. Math. Soc. \textbf{23} (2010), no. 2, 405--468.
+
+
+\bibitem[BZ16]{BZ16} C. Birkar and D.-Q. Zhang, \textit{Effectivity of Iitaka fibrations and pluricanonical systems of polarized pairs}, Pub. Math. IHES. \textbf{123} (2016), 283--331.
+
+
+\bibitem[Fil20]{Fil20} S. Filipazzi, \textit{On a generalized canonical bundle formula and generalized adjunction}, Ann. Sc. Norm. Super. Pisa Cl. Sci. (5) Vol. XXI (2020), 1187--1221.
+
+\bibitem[FS20]{FS20} S. Filipazzi and R. Svaldi, \textit{On the connectedness principle and dual complexes for generalized pairs}, arXiv:2010.08018v2.
+
+%\bibitem[Fuj07]{Fuj07} O. Fujino, \textit{Special termination and reduction to pl flips}, In \textit{Flips for 3--folds and 4--folds}, Oxford University Press (2007).
+
+%\bibitem[Fuj09]{Fuj09} O. Fujino, \textit{Introduction to the log minimal model program for log canonical pairs}, preprint (2009).
+
+\bibitem[Fuj11]{Fuj11} O. Fujino, \textit{Fundamental theorems for the log minimal model program}, Publ. Res. Inst. Math. Sci. \textbf{47} (2011), no. 3, 727--789.
+
+\bibitem[Fuj17]{Fuj17} O. Fujino, \textit{Foundations of the minimal model program}, MSJ Memoirs \textbf{35} (2017), Mathematical Society of Japan, Tokyo.
+
+%\bibitem[Fuj22]{Fuj22} O. Fujino, \textit{Fundamental Properties of Basic Slc-Trivial Fibrations I}, Publ. RIMS Kyoto Univ. \textbf{58} (2022), 473--526.
+
+\bibitem[FG14]{FG14} O. Fujino and Y. Gongyo, \textit{Log pluricanonical representations and abundance conjecture}, Compos. Math. \textbf{150} (2014), no. 4, 593--620.
+
+\bibitem[HL21a]{HL21a} C. D. Hacon and J. Liu, \textit{Existence of generalized lc flips}, arXiv:2105.13590v3.
+
+\bibitem[HX13]{HX13} C. D. Hacon and C. Xu, \textit{Existence of log canonical closures}, Invent. Math. \textbf{192} (2013), no. 1, 161--195.
+
+\bibitem[HX16]{HX16} C. D. Hacon and C. Xu, \textit{On finiteness of B-representations and semi-log canonical abundance} in Minimal Models and Extremal Rays (Kyoto, 2011), Adv. Stud. Pure Math. \textbf{70} (2016), Math. Soc. Japan, Tokyo, 361--378. 
+
+\bibitem[HL22]{HL22} J. Han and Z. Li, \textit{Weak Zariski decompositions and log terminal models for generalized polarized pairs}, Math. Z. \textbf{302} (2022), 707--741.
+
+\bibitem[HLS19]{HLS19} J. Han, J. Liu, and V. V. Shokurov, \textit{ACC for minimal log discrepancies of exceptional singularities}, arXiv:1903.04338v2.
+
+\bibitem[HL21b]{HL21b} J. Han and W. Liu, \textit{On a generalized canonical bundle formula for generically finite morphisms}, Annales de l'Institut Fourier, \textbf{71} (2021), no. 5, 2047--2077.
+
+\bibitem[Has22]{Has22} K. Hashizume, \textit{Iitaka fibrations for dlt pairs polarized by a nef and log big divisor}, Forum of Mathematics, Sigma (2022), Vol. 10: e85 1–47
+
+%\bibitem[HH20]{HH20}  K. Hashizume and Z. Hu, \textit{On minimal model theory for log abundant lc pairs}, J. Reine Angew. Math., \textbf{767} (2020), 109--159. 
+
+\bibitem[JLX22]{JLX22} J. Jiao, J. Liu, and L. Xie, \textit{On generalized lc pairs with b-log abundant nef part}, arXiv:2202.11256v2.
+
+\bibitem[Kol13]{Kol13} J. Koll\'ar, \textit{Singularities of the minimal model program}, Cambridge Tracts in Math. \textbf{200} (2013), Cambridge Univ. Press. With a collaboration of S\'andor Kov\'acs.
+
+\bibitem[KM98]{KM98} J. Koll\'{a}r and S. Mori, \textit{Birational geometry of algebraic varieties}, Cambridge Tracts in Math. \textbf{134} (1998), Cambridge Univ. Press.
+
+\bibitem[Laz04]{Laz04}R. K. Lazarsfeld, \textit{ Positivity in Algebraic Geometry I}, volume 49 of Ergebnisse der Mathematik
+und ihrer Grenzgebiete. 3. Folge. Springer-Verlag Berlin Heidelberg, 2004.
+
+\bibitem[LT22]{LT22} V. Lazi\'c and N. Tsakanikas, \textit{Special MMP for log canonical generalised pairs (with an appendix joint with Xiaowei Jiang)},  Sel. Math. New Ser. 28, 89 (2022).
+
+\bibitem[LX22a]{LX22a} J. Liu and L. Xie, \textit{Relative Nakayama-Zariski decomposition and minimal models of generalized pairs}, arXiv:2207.09576v3.
+
+\bibitem[LX22b]{LX22b} J. Liu and L. Xie, \textit{Semi-ampleness of generalized pairs}, arXiv:2210.01731v1.
+
+\bibitem[TX23]{TX23} N. Tsakanikas and L. Xie, \textit{Remarks on the existence of minimal models of log canonical generalized pairs}, arXiv:2301.09186.
+
+\bibitem{Sho92} V.V. Shokurov, {3--fold log flips}. Izv. Ross. Akad. Nauk Ser. Mat., \textbf{56} (1992), 105--203. 
+\end{thebibliography}
+\end{document}
