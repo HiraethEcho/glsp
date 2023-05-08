@@ -1,0 +1,523 @@
+\documentclass[11pt]{amsart}
+\usepackage{amssymb, adjustbox, enumerate, amsbsy, stmaryrd}
+\usepackage{array, longtable}
+\usepackage{geometry}
+\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm}
+
+%\setcounter{tocdepth}{1}%delete the subsections in the contents
+
+
+\hyphenpenalty=5000
+\tolerance=1000
+
+\usepackage{todonotes}
+ \newcommand\liu[1]{\todo[color=green!40]{#1}} %Liu
+ \newcommand\liuinline[1]{\todo[inline,color=green!40]{#1}} %Liu inline
+ \newcommand\hacon[1]{\todo[color=yellow!40]{#1}} %Hacon
+ \newcommand\haconinline[1]{\todo[inline,color=yellow!40]{#1}} %Hacon inline
+
+
+\usepackage{amsfonts, amssymb, amscd}
+\numberwithin{equation}{section}
+
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\usepackage{bm}
+\usepackage{verbatim}
+%\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{subfiles}
+\usepackage[toc,page]{appendix}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[all]{xy}
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage{appendix}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    citecolor=red,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=red,
+}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+}
+
+
+
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bA}{\mathbb{A}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\oE}{\overline{E}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bb}{\bm{b}}
+\newcommand{\Mm}{{\bf{M}}}
+\newcommand{\Bb}{{\bf{B}}}
+\newcommand{\PP}{{\bf{P}}}
+\newcommand{\NN}{{\bf{N}}}
+\newcommand{\Dd}{{\bf{D}}}
+\newcommand{\oY}{\overline{Y}}
+\newcommand{\oL}{\overline{L}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\ind}{\mathrm{ind}}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\Src}{\mathrm{Src}}
+\newcommand{\Spr}{\mathrm{Spr}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\exc}{\mathrm{exc}}
+
+
+
+\newcommand{\Cc}{\mathbb{C}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\Pp}{\mathbb{P}}
+\newcommand{\Qq}{\mathbb{Q}}
+\newcommand{\Nn}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\Rr}{\mathbb{R}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\Zz}{\mathbb{Z}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+
+
+
+
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\nt}{\operatorname{nt}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\alct}{a\operatorname{LCT}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Center}{\operatorname{center}}
+\newcommand{\Cone}{\operatorname{Cone}}
+\newcommand{\Exc}{\operatorname{Exc}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Fr}{\operatorname{Fr}}
+\newcommand{\Fix}{\operatorname{Fix}}
+\newcommand{\Mov}{\operatorname{Mov}}
+\newcommand{\Bir}{\operatorname{Bir}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\glct}{\operatorname{glct}}
+\newcommand{\GLCT}{\operatorname{GLCT}}
+\newcommand{\HH}{\operatorname{H}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\red}{\operatorname{red}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\lcg}{\operatorname{lcg}}
+\newcommand{\Nklt}{\operatorname{Nklt}}
+\newcommand{\mld}{\operatorname{mld}}
+\newcommand{\tmld}{\operatorname{tmld}}
+\newcommand{\relin}{\operatorname{relin}}
+
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\expsing}{\mathrm{exp}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\Weil}{\operatorname{Weil}}
+\newcommand{\lct}{\operatorname{lct}}
+\newcommand{\act}{\operatorname{act}}
+\newcommand{\LCT}{\operatorname{LCT}}
+\newcommand{\pet}{\operatorname{pet}}
+\newcommand{\pse}{\operatorname{pse}}
+\newcommand{\CR}{\operatorname{CR}}
+\newcommand{\proj}{\operatorname{Proj}}
+\newcommand{\spec}{\operatorname{Spec}}
+\newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\Ngklt}{\operatorname{Ngklt}}
+\newcommand{\Nlc}{\operatorname{Nlc}}
+\newcommand{\Diff}{\operatorname{Diff}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\mult}{\operatorname{mult}}
+\newcommand{\Rct}{\operatorname{Rct}}
+\newcommand{\RCT}{\operatorname{RCT}}
+\newcommand{\Div}{\operatorname{Div}}
+\newcommand{\cont}{\operatorname{cont}}
+\newcommand{\Ft}{\operatorname{Ft}}
+\newcommand{\CY}{\operatorname{CY}}
+
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\lf}{\lfloor}
+\newcommand{\rf}{\rfloor}
+
+
+\newcommand{\Aa}{{\bf{A}}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\Ff}{\mathcal{F}}
+\newcommand{\LCP}{\mathcal{LCP}}
+\newcommand{\Oo}{\mathcal{O}}
+\newcommand{\Ii}{\Gamma}
+\newcommand{\Jj}{\mathcal{J}}
+\newcommand{\Ee}{\mathcal{E}}
+\newcommand{\Hh}{\mathcal{H}}
+\newcommand{\Ll}{\mathcal{L}}
+\newcommand{\me}{\mathcal{E}}
+\newcommand{\mo}{\mathcal{O}}
+\newcommand{\nN}{\mathcal{N}}
+\newcommand{\anN}{\mathcal{AN}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\Ww}{\mathcal{W}}
+\newcommand{\Xx}{\mathcal{X}}
+\newcommand{\Ss}{\mathcal{S}}
+\newcommand{\Yy}{\mathcal{Y}}
+
+
+\newcommand{\BB}{\mathfrak{B}}
+
+\newcommand{\NE}{\mathrm{NE}}
+\newcommand{\Nef}{\mathrm{Nef}}
+\newcommand{\Sing}{\mathrm{Sing}}
+\newcommand{\Pic}{\mathrm{Pic}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\creg}{\mathrm{creg}}
+\newcommand\MLD{{\rm{MLD}}}
+\newcommand\FT{{\rm{FT}}}
+\newcommand{\crt}{{\rm{crt}}}
+\newcommand{\CRT}{{\rm{CRT}}}
+\newcommand{\Coeff}{{\rm{Coeff}}}
+\newcommand\coeff{{\rm{coeff}}}
+
+
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{exprop}[thm]{Example-Proposition}
+\newtheorem{claim}[thm]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{ques}[thm]{Question}
+\theoremstyle{definition}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remdef}[thm]{Remark-Definition}
+\newtheorem{defthm}[thm]{Definition-Theorem}
+\newtheorem{deflem}[thm]{Definition-Lemma}
+\newtheorem{notalem}[thm]{Notation-Lemma}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{nota}[thm]{Notation}
+\newtheorem{exlem}[thm]{Example-Lemma}
+\newtheorem{cons}[thm]{Construction}
+\newtheorem{setup}[thm]{Set-up}
+\newtheorem{cond}[thm]{Condition}
+\newtheorem{code}[thm]{Code}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{notation}{Notation ($\star$)}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\begin{document}
+
+
+\title{Sarkisov program for lc pairs}
+\author[Y. Chen, J. Liu, and Y. Wang]{Yifei Chen, Jihao Liu, and Yanze Wang}
+
+\subjclass[2020]{14E30, 14B05}
+\date{\today}
+
+
+\address{Department of Mathematics, Northwestern University, 2033 Sheridan Rd, Evanston, IL 60208}
+\email{jliu@northwestern.edu}
+
+
+
+
+\begin{abstract}
+We establish the Sarkisov program for lc pairs. As applications and related results, we prove a result on the finiteness of models for lc pairs, and show that lc Fano varieties are Mori dream spaces. We also establish the lc generalized pair version of the forestated results.
+\end{abstract}
+
+\maketitle
+\pagestyle{myheadings}\markboth{\hfill  J.Liu \hfill}{\hfill Sarkisov program for lc generalized pairs\hfill}
+
+
+\tableofcontents
+
+\section{Introduction}
+In this paper we work over the field of complex numbers $\mathbb C$.
+
+
+
+\begin{thm}[Lc Sarkisov program]\label{thm: lc Sarkisov program}
+Assume that
+\begin{enumerate}
+    \item $(W,B_W)/Z$ is an lc pair such that $K_W+B_W$ is not pseudo-effective$/Z$,
+    \item $\rho_X: W\dashrightarrow X$ and $\rho_Y: W\dashrightarrow Y$ are two $(K_W+B_W)$-MMP$/Z$, $B_X:=(\rho_X)_*B_W$, and $B_Y:=(\rho_Y)_*B_W$, and
+    \item $\phi_X: X\rightarrow S_X$ is a $(K_X+B_X)$-Mori fiber space$/Z$ and $\phi_Y: Y\rightarrow S_Y$ is a $(K_Y+B_Y)$-Mori fiber space$/Z$.
+\end{enumerate}
+\begin{center}$\xymatrix{
+ & W\ar@{-->}[dl]_{\rho_X}\ar@{-->}[dr]^{\rho_Y}& \\
+      X \ar@{->}[d]_{\phi_X}\ar@{-->}[rr]^{f}   &  & Y\ar@{->}[d]^{\phi_Y} \\
+    S_X & &S_Y }$
+\end{center}
+Thent he induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$,
+\end{thm}
+
+\begin{thm}[lc Sarkisov program for generalized pairs]\label{thm: lc Sarkisov program gpair}
+Assume that
+\begin{enumerate}
+    \item $(W,B_W,\Mm)/Z$ is an lc generalized pair such that $K_W+B_W+\Mm_W$ is not pseudo-effective$/Z$,
+    \item $\rho_X: W\dashrightarrow X$ and $\rho_Y: W\dashrightarrow Y$ are two $(K_W+B_W+\Mm_W)$-MMP$/Z$, $B_X:=(\rho_X)_*B_W$, and $B_Y:=(\rho_Y)_*B_W$, and
+    \item $\phi_X: X\rightarrow S_X$ is a $(K_X+B_X+\Mm_X)$-Mori fiber space$/Z$ and $\phi_Y: Y\rightarrow S_Y$ is a $(K_Y+B_Y+\Mm_Y)$-Mori fiber space$/Z$.
+\end{enumerate}
+\begin{center}$\xymatrix{
+ & W\ar@{-->}[dl]_{\rho_X}\ar@{-->}[dr]^{\rho_Y}& \\
+      X \ar@{->}[d]_{\phi_X}\ar@{-->}[rr]^{f}   &  & Y\ar@{->}[d]^{\phi_Y} \\
+    S_X & &S_Y }$
+\end{center}
+Thent he induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$,
+\end{thm}
+
+\begin{thm}[Generalized lc Fano varieties are Mori dream spaces]
+    Let $(X,B,\Mm)/Z$ be an lc generalized pair such that $-(K_X+B+\Mm_X)$ is ample$/Z$. Then $X$ is a Mori dream space$/Z$. In particular, for any $\Rr$-Cartier $\Rr$-divisor $D$ on $X$, we may run a $D$-MMP$/Z$ which termiantes with either a good minimal model$/Z$ or a Mori fiber space$/Z$.
+\end{thm}
+
+
+\begin{thm}[Finiteness of weak log canonical models for lc generalized pairs]\label{thm: finiteness ltm lc gpair}
+Let $X\rightarrow Z$ be a projective morphism between normal quasi-projective varieties, $\Mm$ an NQC$/Z$ $\bb$-divisor on $X$, and $A\geq 0$ an ample $\Rr$-divisor on $X$. Let  $\mathcal{V}\subset\Weil_{\Rr}(X)$ a finite dimensional rational subspace and $\mathcal{C}\subset\mathcal{L}_A(\mathcal{V})$ a rational polytope such that $(X,B,\Mm)$ is lc for any $B\in\mathcal{C}$. Then there exists an integer $k\geq 0$ and birational maps$/Z$ $\phi_i: X\dashrightarrow Y_i$ for each $1\leq i\leq k$, such that 
+\begin{enumerate}
+    \item $\phi_i$ does not extract any divisor, 
+    \item for every $B\in\mathcal{C}$, there exists $i$ such that $(Y_i,(\phi_i)_*B,\Mm)/Z$ is a weak lc model of $(X,B,\Mm)/Z$, and
+    \item for any $B\in\mathcal{C}$ and any log minimal model $(Y,B_Y,\Mm)/Z$ of $(X,B,\Mm)/Z$ with induced birational map $\phi: X\dashrightarrow Y$, if 
+    \begin{itemize}
+        \item there exists an ample $\Rr$-divisor $A_Y\geq 0$ and an $\Rr$-divisor $\Delta_Y\geq 0$ on $Y$, such that $B_Y\sim_{\mathbb R,Z}A_Y+\Delta_Y$ and $(Y,\Delta_Y+A_Y)$ is lc,
+    \end{itemize}
+    then there exists $j$, such that  $\psi:=\phi_j\circ\phi^{-1}: Y\rightarrow Y_j$ is an isomorphism.
+\end{enumerate}
+\end{thm}
+
+We remark that the existence of the ample $\Rr$-divisors $A$ and $A_Y$ in Theorem \ref{thm: finiteness ltm lc gpair} are crucial by considering the following example:
+
+\begin{ex}[{\cite{Gon09}}]
+ Let $S$ be a K3 surface with  infinitely many $(-2)$-curves, $X_0$ the projective cone of $S$, and $\phi: X\rightarrow X_0$ the blow-up of the vertex.
+ 
+ Let $H_0$ be a general and sufficiently ample divisor on $X_0$, $E$ the $\phi$-exceptional prime divisor, and $H:=\phi^{-1}_*H_0$. Then $K_X+E+H=\phi^*(K_{X_0}+H_0)$ and $K_X+E+H$ is big and nef.  By \cite[Example 0.3]{Gon09}, there are infinitely many log minimal models of $(X,E+H)$. Therefore, there are infinitely many log minimal models of $(X_0,H_0)$. However, it is easy to see that the only log minimal model of $(X_0,H_0)$ which does not extract any divisor is $(X_0,H_0)$ itself.
+ 
+
+Now we let $Y_0$ be the cone of $X_0$ and let $Y$ be the main component of $Y\times_{X_0}X$. Then the induced morphism $\phi_Y: Y\rightarrow Y_0$ is small. Let $H_{Y_0}$ be a general and sufficiently ample divisor on $Y_0$ and let $H_Y:=(\phi_Y)^{-1}_*H_{Y_0}$. By the same arguments as in \cite[Example 0.3]{Gon09},  there are infinitely many log minimal models of $(Y,H_Y)$. Therefore, there are infinitely many log minimal models of $(Y_0,H_{Y_0})$ which does not extract any divisor. 
+
+However, except $(Y_0,H_{Y_0})$ itself, no log minimal modeo of $(Y_0,H_{Y_0})$ satisfies the additional condition as in Theorem \ref{thm: finiteness ltm lc gpair}(3). In particular, they cannot be achieved by running a $(K_{Y_0}+H_{Y_0})$-MMP.
+\end{ex}
+
+
+\section{Preliminaries}
+
+We will work over the field of complex numbers $\Cc$. Throughout the paper, we will mainly work with normal quasi-projective varieties to ensure consistency with the references. However, most results should also hold for normal varieties that are not necessarily quasi-projective. Similarly, most results in our paper should hold for any algebraically closed field of characteristic zero. We will adopt the standard notations and definitions in \cite{KM98, BCHM10} and use them freely. For generalized pairs, we will follow the notations and definitions in \cite{HL21}. We emphasize that, throughout this paper, generalized pairs are always assumed to be NQC.
+
+\begin{defn}[$\bb$-divisors]\label{defn: b divisors} Let $X$ be a normal quasi-projective variety. We call $Y$ a \emph{birational model} over $X$ if there exists a projective birational morphism $Y\to X$. 
+
+Let $X\dashrightarrow X'$ be a birational map. For any valuation $\nu$ over $X$, we define $\nu_{X'}$ to be the center of $\nu$ on $X'$. A \emph{$\bb$-divisor} $\Dd$ over $X$ is a formal sum $\Dd=\sum_{\nu} r_{\nu}\nu$ where $\nu$ are valuations over $X$ and $r_{\nu}\in\mathbb R$, such that $\nu_X$ is not a divisor except for finitely many $\nu$. If in addition, $r_{\nu}\in\Qq$ for every $\nu$, then $\Dd$ is called a \emph{$\Qq$-$\bb$-divisor}. The \emph{trace} of $\Dd$ on $X'$ is the $\Rr$-divisor
+$$\Dd_{X'}:=\sum_{\nu_{i,X'}\text{ is a divisor}}r_i\nu_{i,X'}.$$
+If $\Dd_{X'}$ is $\Rr$-Cartier and $\Dd_{Y}$ is the pullback of $\Dd_{X'}$ on $Y$ for any birational model $Y$ of $X'$, we say that $\Dd$ \emph{descends} to $X'$, and also say that $\Dd$ is the \emph{closure} of $\Dd_{X'}$, and write $\Dd=\overline{\Dd_{X'}}$. 
+
+Let $X\rightarrow U$ be a projective morphism and assume that $\Dd$ is a $\bb$-divisor over $X$ such that $\Dd$ descends to some birational model $Y$ over $X$. If $\Dd_Y$ is nef$/U$, then we say that $\Dd$ is \emph{nef}$/U$. If $\Dd_Y$ is a Cartier divisor, then we say that $\Dd$ is \emph{$\bb$-Cartier}. If $\Dd_Y$ is a $\Qq$-Cartier $\Qq$-divisor, then we say that $\Dd$ is \emph{$\Qq$-$\bb$-Cartier}. If $\Dd$ can be written as an $\Rr_{\geq 0}$-linear combination of nef$/U$ $\bb$-Cartier $\bb$-divisors, then we say that $\Dd$ is \emph{NQC}$/U$.
+
+We let $\bm{0}$ be the $\bb$-divisor $\bar{0}$.
+\end{defn}
+
+\begin{defn}[Generalized pairs]\label{defn: g-pairs}
+A \emph{generalized sub-pair} (\emph{g-sub-pair} for short) $(X,B,\Mm)/U$ consists of a normal quasi-projective variety $X$ associated with a projective morphism $X\rightarrow U$, an $\Rr$-divisor $B$ on $X$, and an NQC$/U$ $\bb$-divisor $\Mm$ over $X$, such that $K_X+B+\Mm_X$ is $\Rr$-Cartier. If $B$ is a $\Qq$-divisor and $\Mm$ is a $\Qq$-$\bb$-divisor, then we say that $(X,B,\Mm)/U$ is a \emph{$\Qq$-g-sub-pair}.
+
+If $\Mm=\bm{0}$, a g-sub-pair $(X,B,\Mm)/U$ is called a \emph{sub-pair} and is denoted by $(X,B)$ or $(X,B)/U$. 
+
+If $U=\{pt\}$, we usually drop $U$ and say that $(X,B,\Mm)$ is a \emph{projective}.
+
+A g-sub-pair (resp. NQC g-sub-pair, $\Qq$-g-sub-pair) $(X,B,\Mm)/U$ is called a \emph{g-pair} (resp. \emph{NQC g-pair}, \emph{$\Qq$-g-pair}) if $B\geq 0$. A sub-pair $(X,B)$ is called a \emph{pair} if $B\geq 0$.
+\end{defn}
+
+\begin{nota}
+In the previous definition, if $U$ is not important, we may also drop $U$. This usually happens when we emphasize the structures of $(X,B,\Mm)$ that are independent of the choice of $U$, such as the singularities of $(X,B,\Mm)$. See Definition \ref{defn: sing of g-pairs} below.
+\end{nota}
+
+
+
+
+
+\begin{defn}[Singularities of generalized pairs]\label{defn: sing of g-pairs}
+	Let $(X,B,\Mm)/U$ be a g-(sub-)pair. For any prime divisor $E$ and $\mathbb R$-divisor $D$ on $X$, we define $\mult_{E}D$ to be the \emph{multiplicity} of $E$ along $D$.  Let $h:W\to X$
+	be any log resolution of $(X,\Supp B)$ such that $\Mm$ descends to $W$, and let
+	$$K_W+B_W+\Mm_W:=h^*(K_X+B+\Mm_X).$$
+	The \emph{log discrepancy} of a prime divisor $D$ on $W$ with respect to $(X,B,\Mm)$ is $1-\mult_{D}B_W$ and it is denoted by $a(D,X,B,\Mm).$
+	
+	We say that $(X,B,\Mm)$ is \emph{(sub-)lc} (resp. \emph{(sub-)klt}) if $a(D,X,B,\Mm)\ge0$ (resp. $>0$) for every log resolution $h: W\to X$ as above and every prime divisor $D$ on $W$. 
+	
+	We say that $(X,B,\Mm)$ is \emph{dlt} if $(X,B,\Mm)$ is lc, and there exists a closed subset $V\subset X$, such that
+\begin{enumerate}
+    \item $X\backslash V$ is smooth and $B_{X\backslash V}$ is simple normal crossing, and
+    \item for any prime divisor $E$ over $X$ such that $a(E,X,B,\Mm)=0$, $\Center_XE\not\subset V$ and $\Center_XE\backslash V$ is an lc center of $(X\backslash V,B|_{X\backslash V})$.
+\end{enumerate}
+If $\Mm=\bm{0}$ and $(X,B,\Mm)$ is (sub-)lc (resp, (sub-)klt, dlt), we say that $(X,B)$ is (sub-)lc (resp. (sub-)klt, dlt). We remark that the definition of dlt for g-pairs coincides with the definitions in all literature thanks to \cite[Theorem 6.1]{Has22}.
+	    
+	 Suppose that $(X,B,\Mm)$ is sub-lc. A \emph{lc place} of $(X,B,\Mm)$ is a prime divisor $E$ over $X$ such that $a(E,X,B,\Mm)=0$. A \emph{lc center} of $(X,B,\Mm)$ is the center of a lc place of $(X,B,\Mm)$ on $X$. The \emph{non-klt locus} $\Nklt(X,B,\Mm)$ of $(X,B,\Mm)$ is the union of all lc centers of $(X,B,\Mm)$. If $\Mm=\bm{0}$, a lc place (resp. a lc center, the non-klt locus) of $(X,B,\Mm)$ will be called an lc place (resp. an lc center, the non-klt locus) of $(X,B)$, and we will denote $\Nklt(X,B,\Mm)$ by $\Nklt(X,B)$. 
+	 
+	 We note that the definitions above are independent of the choice of $U$.
+\end{defn}
+
+\section{Finiteness of models}
+
+\section{Proof of the main theorems}
+
+\begin{proof}[Proof of Theorem \ref{thm: lc Sarkisov program}]
+    It is a special case of Theorem \ref{thm: lc Sarkisov program gpair}.
+\end{proof}
+
+
+
+
+
+
+\begin{thebibliography}{ABCDE}
+
+\bibitem[Abe97]{Abe97} T. Abe, \textit{Classification of Exceptional Complements: Elliptic Curve Case}, arXiv:alg-geom/9711029.
+
+\bibitem[Ale93]{Ale93} V. Alexeev, \textit{Two two--dimensional terminations}, Duke Math. J. \textbf{69} (1993), no. 3, 527--545.
+
+\bibitem[Ale94]{Ale94} V. Alexeev, \textit{Boundedness and $K^2$ for log surfaces}, Internat. J. Math. \textbf{5} (1994), 779--810.
+
+\bibitem[AL19a]{AL19a} V. Alexeev and W. Liu, \textit{Open surfaces of small volume}, Algebraic Geom. \textbf{6} (2019), no. 3, 312--327.
+
+\bibitem[AL19b]{AL19b} V. Alexeev and W. Liu, \textit{On accumulation points of volumes of log surfaces}, Izv. RAN. Ser. Mat. \textbf{83} (2019), no. 4, 5--25.
+
+\bibitem[AST11]{AST11} M. Artebani, A. Sarti, and S. Taki, \textit{K3 surfaces with non-symplectic automorphisms of prime order}, Math. Z. \textbf{268} (2011), 507--533.
+
+\bibitem[Bel08]{Bel08} G. N. Belousov, \textit{Del Pezzo surfaces with log terminal singularities}, Mat. Zametki \textbf{83} (2008), no. 2, 170--180 (Russian) English translate Math. Notes.
+
+\bibitem[Bel09]{Bel09} G. N. Belousov, \textit{The maximal number of singular points on log del Pezzo surfaces}, J. Math. Sci. Univ. Tokyo \textbf{16} (2009), no. 2, 231--238.
+
+\bibitem[Ber21]{Ber21} F. Bernasconi, \textit{Kawamata-Viehweg vanishing fails for log del Pezzo surfaces in characteristic 3}, J. Pure Appl. Algebra \textbf{225} (2021), no. 11, 106727.
+
+\bibitem[BBKW22]{BBKW22} F. Bernasconi, I. Brivio, T. Kawakami, and J. Witaszek, \textit{Lifting globally F-split surfaces to characteristic zero}, arXiv:2205.01779v2.
+
+\bibitem[Bir19]{Bir19} C. Birkar, \textit{Anti-pluricanonical systems on Fano varieties}, Ann. of Math. \textbf{190}(2) (2019), 345--463.
+
+
+%\bibitem[Bir21a]{Bir21a} C.~Birkar, \textit{Singularities of linear systems and boundedness of {F}ano varieties}, Ann. of Math. \textbf{193} (2021), no. 2, 347--405.
+
+	
+\bibitem[BCHM10]{BCHM10}
+C. Birkar, P. Cascini, C. D. Hacon and J. M\textsuperscript{c}Kernan, \textit{Existence of minimal models for varieties of log general type}, J. Amer. Math. Soc. \textbf{23} (2010), no. 2, 405--468.
+
+\bibitem[BJ20]{BJ20} H. Blum and M. Jonsson, \textit{Thresholds, valuations, and K-stability}, Adv. Math. \textbf{365} (2020), 107062.
+
+\bibitem[Bri68]{Bri68} E. Brieskorn, \textit{Rationale Singulariten komplexer Flachen}, Invent. Math. \textbf{4} (1968), 336--358.
+
+\bibitem[CPS10]{CPS10} I. Cheltsov, J. Park, and C. Shramov, \textit{Exceptional del Pezzo hypersurfaces}, arXiv:0810.2704v6. Short version published on J. Geom. Anal., \textbf{20} (2010), 787–-816.
+
+\bibitem[CH21]{CH21} G.~Chen and J.~Han, \textit{Boundedness of $(\epsilon, n)$-complements for surfaces}, Adv. Math. \textbf{383} (2021), 107703, 40pp.
+
+\bibitem[ETW21]{ETW21} L. Esser, B. Totaro, and C. Wang, \textit{Varieties of general type with doubly exponential asymptotics}, arXiv:2109.13383v3, to appear in Trans. Am. Math. Soc., Series B.
+
+\bibitem[ETW22]{ETW22} L. Esser, B. Totaro, and C. Wang, \textit{Calabi-Yau varieties of large index}, arXiv:2209.04597v2.
+
+\bibitem[Fuj09]{Fuj09} O. Fujino, \textit{Effective base point free theorem for log canonical pairs—-Koll\'ar type theorem}, Tohoku Math. J. (2) \textbf{61} (2009), no. 4, 475--481.
+
+\bibitem[Gon09]{Gon09} Y. Gongyo, \textit{Example of a plt pair of log general type with infinitely many log minimal models}, \url{https://www.ms.u-tokyo.ac.jp/~gongyo/notes/infinite.pdf} (2009).
+
+\bibitem[HL21]{HL21} C. D. Hacon and J. Liu, \textit{Existence of flips for generalized lc pairs}, arXiv:2105.13590. Short version to appear in  Camb. J. Math.
+
+\bibitem[HLS19]{HLS19} J. Han, J. Liu, and V. V. Shokurov, \textit{ACC for minimal log discrepancies of exceptional singularities}, arXiv:1903.04338v2.
+
+\bibitem[HL22]{HL22} J. Han and Y. Luo,
+\textit{On boundedness of divisors computing minimal log discrepancies for surfaces}, J. Inst. Math. Jussieu. (2022), 1--24.
+
+
+\bibitem[HMX14]{HMX14} C. D. Hacon, J. M\textsuperscript{c}Kernan, and C. Xu, \textit{ACC for log canonical thresholds}, Ann. of Math. \textbf{180} (2014), no. 2, 523--571.
+
+\bibitem[Has22]{Has22} K. Hashizume, \textit{Iitaka fibrations for dlt pairs polarized by a nef and log big divisor}, Forum Math. Sigma. \textbf{10} (2022), Article No. 85.
+
+\bibitem[Jia21]{Jia21} C.~Jiang, \textit{A gap theorem for minimal log discrepancies of non-canonical singularities in dimension three}, J. Algebraic Geom. \textbf{30} (2021), 759--800.
+
+\bibitem[KM99]{KM99} S. Keel and J. M\textsuperscript{c}Kernan, \textit{Rational curves on quasi-projective surfaces}, Mem. Amer. Math. Soc. \textbf{140} (1999), no. 669, viii+153.
+
+\bibitem[Kol94]{Kol94} J. Koll\'ar, \textit{Log surfaces of general type; some conjectures}, Contemp. Math. AMS \textbf{162} (1994), 261--275.
+
+%\bibitem[Kol08]{Kol08} J. Koll\'ar, \textit{Which powers of holomorphic functions are integrable?}, arXiv: 0805.0756v1.
+
+
+\bibitem[Kol93]{Kol93} J. Koll\'{a}r, \textit{Effective base point freeness}, Math. Annalen (1993), Volume \textbf{296}, Issue 1, 595--605.
+
+
+\bibitem[Kol13]{Kol13} J. Koll\'ar, \textit{Moduli of varieties of general type}, Handbook of moduli \textbf{2}, Adv. Lect. Math. (ALM), \textbf{25} (2013), Int. Press, Somerville, MA, 131--157.
+
+\bibitem[Kol$^+$92]{Kol+92} J.~Koll\'{a}r \'{e}t al., \textit{Flip and abundance for algebraic threefolds}, Ast\'{e}risque no. \textbf{211}, (1992).
+
+\bibitem[KM98]{KM98} J. Koll\'{a}r and S. Mori, \textit{Birational geometry of algebraic varieties}, Cambridge Tracts in Math. \textbf{134} (1998), Cambridge Univ. Press.
+
+\bibitem[Kuw99]{Kuw99} T. Kuwata, \textit{On log canonical thresholds of reducible plane curves}, Amer. J. Math. \textbf{121} (1999), 701--721.
+
+\bibitem[Liu22]{Liu22} J.~Liu, \textit{Remark on complements on surfaces}, arXiv:2208.09184v2. 
+
+\bibitem[LL22]{LL22} J.~Liu and Y. Luo, \textit{ACC for minimal log discrepancies of $\frac{5}{6}$-lc threefolds}, arXiv: 2207.04610v1.
+
+\bibitem[LX21a]{LX21a} J.~Liu and L. Xiao, \textit{An optimal gap of minimal log discrepancies of threefold non-canonical singularities}, J. Pure Appl. Algebra \textbf{225} (2021), no. 9, 106674, 23 pp.
+
+\bibitem[LX21b]{LX21b} J. Liu and L. Xie, \textit{Divisors computing minimal log discrepancies on lc surfaces}, arXiv:2101.00138v2. to appear in Math. Proc. Camb. Philos. Soc.
+
+\bibitem[LX21c]{LX21c} J. Liu and L. Xie, \textit{Number of singular points on projective surfaces}, arXiv:2103.04522v1.
+
+
+
+\bibitem[Nak04]{Nak04} N. Nakayama, \textit{Zariski-decomposition and abundance}, MSJ Memoirs, vol. 14, Mathematical Society of Japan, Tokyo, 2004.
+
+\bibitem[OS12]{OS12} Y. Odaka and Y. Sano, \textit{Alpha invariant and K-stability of $\mathbb Q$-Fano varieties},  Adv. Math. \textbf{229} (2012), no. 5, 2018--2834.
+
+\bibitem[Pro01]{Pro01} Y. Prokhorov, \textit{A note on log canonical thresholds}, Comm. Algebra, \textbf{29} (2001), no. 9, 3961--3970.
+
+\bibitem[Pro02]{Pro02} Y. G. Prokhorov, \textit{On log canonical thresholds, II}, Communications in Algebra \textbf{30} (2002), no. 12, 5809--5823.
+
+\bibitem[Sho88]{Sho88} V. V.~Shokurov, \textit{Problems about Fano varieties}, Birational Geometry of Algebraic Varieties, Open Problems. The XXIIIrd International Symposium, Division of Mathematics, The Taniguchi Foundation, 30--32, August 22--August 27, 1988.
+
+\bibitem[Sho92]{Sho92} V.V.~Shokurov, \textit{Threefold log flips}, With an appendix in English by Y. Kawamata, Izv. Ross. Akad. Nauk Ser. Mat. \textbf{56} (1992), no. 1, 105--203 (Appendix by Y. Kawamata).
+
+
+\bibitem[Sho00]{Sho00} V. V. Shokurov, \textit{Complements on surfaces}, J. Math. Sci. (New York) \textbf{102} (2000), no. 2, 3876--3932.
+
+\bibitem[Sho20]{Sho20} V. V. Shokurov, \textit{Existence and boundedness of n-complements}, arXiv:2012.06495v1.
+
+\bibitem[Tia87]{Tia87} G. Tian, \textit{On K\"ahler–Einstein metrics on certain K\"ahler manifolds with $c_1(M)>0$}, Invent. Math. \textbf{89} (1987), 225--246.
+
+\bibitem[Tot22]{Tot22} B. Totaro, \textit{Klt varieties with conjecturally minimal volume}, arXiv:2210.11354v2.
+
+\bibitem[TW21]{TW21} B. Totaro and C. Wang, \textit{Klt varieties of general type with small volume}, arXiv:2104.12200v4.
+\end{thebibliography}
+
+
+
+
+\end{document}

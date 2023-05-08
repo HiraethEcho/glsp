@@ -1,0 +1,2 @@
+时间长也可以做的完全一些。我的印象中finiteness of model是不是Q factorial的对难度影响很大。Sarkisov program也是，可以start with Q factorial，但是不Q factorial的不知道对不对。后者应该klt也不知道。
+我刚才稍微写了些。有两件事情跟你报告一下。一个是我觉得记号之后还是用hacon-liu的记号为好( (X,B,粗体M)/Z). 当年我写gklt的时候不是这个记号，所以复制的时候需要修改一下。定义什么的我都给好了。然后关于奇点的定义的话，现在看来写成lc，klt应该比glc，gklt标准，所以尽量最好都用lc，klt。第二个事情是，其实finiteness of model twist by ample并且要求不extract divisor也是不够的。gongyo的例子稍微再变化一下应该就可以了。不过，所有这些infiniteness of model的boundary似乎都不能写成ample+effective的形式，因此不会是mmp的output。我还在思考什么条件是最自然的。

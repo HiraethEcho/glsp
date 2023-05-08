@@ -259,13 +259,8 @@ Assume that
     S_X & &S_Y }$
 \end{center}
 Then
-\begin{enumerate}
-    \item the induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$, and
-    % \item for any real number $\epsilon>0$, if $(W,B_W+M_W)$ is generalized $\epsilon$-lc, then $(X_i,B_i+M_{X_i})$ is generalized $\epsilon$-lc for every $i$, where each $B_i$ is the birational transform of $B_W$ on $X_i$.
-\end{enumerate} 
+     the induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$. 
 \end{thm}
-TODO: NOT $\epsilon$-lc
-% TODO: NOT $\epsilon$-lc
 
 \section{Notation and Conventions}
 
@@ -350,7 +345,13 @@ TODO: maybe only consider the divisor $E$ on $Y$.
 % TODO: maybe only consider the divisor $E$ on $Y$.  
 
 \section{Preliminaries}
-
+\begin{lem}
+Let $(X,B= \sum_{i}b_{i}B_{i})$ be a log smooth variety, and $Z$ be a smooth subvarity of codimension $r \geqslant 2$. Let $p:Y \to X$ be the blowing up of $Z$ and $E$ be the exceptional divisor , then 
+  \[
+  K_{V}+p^{-1}_*B +(1-r+ \sum_{i}b_{i}\cdot \operatorname{mult}_ZB_{i}) E= p^*(K_{X}+B)
+  \]
+  
+\end{lem}
 	\begin{lem}[dlt modification, {\cite[Proposition 3.10]{HL22}}]\label{lem: dlt modification}
 		Let $ (X,B+M) $ be an lc g-pair with data $ W \xrightarrow{f} X \to Z $ and $ M_W $. Then, after possibly replacing $ f $ with a higher model, there exist a $\mathbb{Q}$-factorial dlt g-pair $(X',B'+M')$ with data $ W \xrightarrow{g}  X' \to Z $ and $ M_W $, and a projective birational morphism $ h \colon X' \to X $ such that 
 		\[ K_{X'} + B' + M' \sim_\mathbb{R} h^* (K_X + B + M) \quad \text{and} \quad B' = h_*^{-1} B + E , \]
@@ -360,6 +361,45 @@ TODO: maybe only consider the divisor $E$ on $Y$.
 \begin{thm}[contraction extremal faces]\label{thm: contraction extremal face glc}
   contraction faces
 \end{thm}
+TODO: properties of terminalization
+
+% TODO: properties of terminalization
+\begin{prop}\label{prop: g terminalization prop} 
+Let $W\rightarrow Z$ and $X\rightarrow Z$ be two contractions, $f:W\dashrightarrow X$ a birational map$/Z$, and $(W,B_W+M_W)$ and $(X,B+M_X)$ two g-pairs$/Z$. Assume that
+\begin{itemize}
+    \item $K_X+B+M_X$ is nef$/Z$,
+    \item $f$ does not extract any divisor,
+    \item for any prime divisor $D\subset W$, $a(D,X,B+M_X)\geq a(D,W,B_W+M_W)$, and
+    % \item $(W,B_W+M_W)$ is g-terminal,
+\end{itemize}
+then
+\begin{enumerate}
+    \item $a(E,X,B+M_X)\geq a(E,W,B+M_W)$ for any prime $\bb$-divisor $E$ over $X$. In other words, $(W,B+M_W)\geq (X,B+M_X)$.
+    \item $(X,B+M_X)$ is glc,
+    %  TODO:  $(X,B+M_X)$ is glc,
+    % \item there is a generalized terminalization $g: Y\rightarrow X$ of $(X,B+M_X)$,
+    % \item the induced birational map $W\dashrightarrow Y$ does not extract any divisor,
+    \item for any exceptional$/X$ $\bb$-divisor $E$ such that $a(E,X,B+M_X)\leq 1$, $E$ is on $W$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Let 
+$p: V\rightarrow W$ and $q: V\rightarrow X$ be any resolution of indeterminacy of $f$ 
+\[
+  \xymatrix{
+ & V\ar@{->}[dl]_{p}\ar@{->}[dr]^{q}& \\
+      W\ar@{-->}[rr]^{f}   &  & X \\
+    }
+\]
+
+
+such that
+$$p^*(K_W+B_W+M_W)=q^*(K_X+B+M_X)+E_V,$$
+then $p_*E_V=\sum_{E\subset W}(a(E,X,B+M_X)-a(E,W,B_W+M_W))E\geq 0$. Since $K_X+B+M_X$ is nef$/Z$, $-E_V$ is nef$/W$. By the negativity lemma, $E_V\geq 0$, which implies (1). 
+Since $(W,B_W+M_W)$ is glc, $a(E,W,B_W+M_W) \geqslant 0 $, and (2) follows from (1).  
+
+Suppose that $E$ is an exceptional$/W$ prime $\bb$-divisor. Since $(W,B_W+M_W)$ is g-terminal, $a(E,W,B_W+M_W)>1$. Since $f$ does not extract any divisor, $E$ is exceptional$/X$. By construction of generalized terminalization, we deduce (4). (5) follows from (4).
+\end{proof}
 
 	% \begin{thm}\label{thm:EGMM_boundary_contains_ample}
 \begin{thm}[MMP for glc gpairs, {\cite[Theorem 4.4]{TX23}}]\label{thm: gen pair mmp}
