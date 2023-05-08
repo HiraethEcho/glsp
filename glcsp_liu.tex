@@ -2,7 +2,8 @@
 \usepackage{amssymb, adjustbox, enumerate, amsbsy, stmaryrd}
 \usepackage{array, longtable}
 \usepackage{geometry}
-\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm}
+% \geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=2.5cm}
+\geometry{a4paper,top=3cm,bottom=3cm,left=2.5cm,right=5cm}
 
 %\setcounter{tocdepth}{1}%delete the subsections in the contents
 
@@ -11,10 +12,12 @@
 \tolerance=1000
 
 \usepackage{todonotes}
+ \newcommand\chen[1]{\todo[color=yellow!40]{#1}} 
+ \newcommand\cheninline[1]{\todo[inline,color=yellow!40]{#1}} 
  \newcommand\liu[1]{\todo[color=green!40]{#1}} %Liu
  \newcommand\liuinline[1]{\todo[inline,color=green!40]{#1}} %Liu inline
- \newcommand\hacon[1]{\todo[color=yellow!40]{#1}} %Hacon
- \newcommand\haconinline[1]{\todo[inline,color=yellow!40]{#1}} %Hacon inline
+ \newcommand\wang[1]{\todo[color=blue!40]{#1}} 
+ \newcommand\wanginline[1]{\todo[inline,color=blue!40]{#1}} 
 
 
 \usepackage{amsfonts, amssymb, amscd}
@@ -365,10 +368,6 @@ A g-sub-pair (resp. NQC g-sub-pair, $\Qq$-g-sub-pair) $(X,B,\Mm)/U$ is called a 
 In the previous definition, if $U$ is not important, we may also drop $U$. This usually happens when we emphasize the structures of $(X,B,\Mm)$ that are independent of the choice of $U$, such as the singularities of $(X,B,\Mm)$. See Definition \ref{defn: sing of g-pairs} below.
 \end{nota}
 
-
-
-
-
 \begin{defn}[Singularities of generalized pairs]\label{defn: sing of g-pairs}
 	Let $(X,B,\Mm)/U$ be a g-(sub-)pair. For any prime divisor $E$ and $\mathbb R$-divisor $D$ on $X$, we define $\mult_{E}D$ to be the \emph{multiplicity} of $E$ along $D$.  Let $h:W\to X$
 	be any log resolution of $(X,\Supp B)$ such that $\Mm$ descends to $W$, and let
@@ -389,7 +388,371 @@ If $\Mm=\bm{0}$ and $(X,B,\Mm)$ is (sub-)lc (resp, (sub-)klt, dlt), we say that 
 	 We note that the definitions above are independent of the choice of $U$.
 \end{defn}
 
+\begin{defn}
+Assume that
+\begin{itemize}
+    \item $X\rightarrow Z$ and $Y\rightarrow Z$ are two contractions,
+    \item $(X,B,\Mm)$ and $(Y,B_Y,\Mm)$ are two g-pairs$/Z$ with the same associated nef$/Z$ $\bb$-divisor $\Mm$, and
+    \item $f: X\dashrightarrow Y$ is a birational map$/Z$,
+\end{itemize}
+such that
+\begin{itemize}
+    \item $f$ does not extract any divisor, and
+    \item $a(E,X,B+\Mm)\leq a(E,Y,B_Y,\Mm)$ for every prime $\bb$-divisor $E$ over $X$,
+\end{itemize}
+then we may write $(X,B,\Mm)\geq (Y,B_Y,\Mm)$.
+\end{defn}
+
+\begin{prop}\label{prop: g lc prop} 
+Let $W\rightarrow Z$ and $X\rightarrow Z$ be two contractions, $f:W\dashrightarrow X$ a birational map$/Z$, and $(W,B_W,\Mm)$ and $(X,B,\Mm)$ two g-pairs$/Z$. Assume that
+\begin{itemize}
+    \item $K_X+B+M_X$ is nef$/Z$,
+    \item $f$ does not extract any divisor,
+    \item for any prime divisor $D\subset W$, $a(D,X,B,\Mm )\geq a(D,W,B_W,\Mm)$, and
+    \item $(W,B_W,\Mm)$ is lc,
+\end{itemize}
+then
+\begin{enumerate}
+    \item $a(E,X,B)\geq a(E,W,B+M_W)$ for any prime $\bb$-divisor $E$ over $X$. In other words, $(W,B+M_W)\geq (X,B,\Mm)$.
+    \item $(X,B,\Mm)$ is lc.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Let 
+$p: V\rightarrow W$ and $q: V\rightarrow X$ be any resolution of indeterminacy of $f$ 
+\[
+  \xymatrix{
+ & V\ar@{->}[dl]_{p}\ar@{->}[dr]^{q}& \\
+      W\ar@{-->}[rr]^{f}   &  & X \\
+    }
+\]
+
+
+such that
+$$p^*(K_W+B_W+M_W)=q^*(K_X+B+M_X)+E_V,$$
+then $p_*E_V=\sum_{E\subset W}(a(E,X,B,\Mm)-a(E,W,B_W,\Mm))E\geq 0$. Since $K_X+B+M_X$ is nef$/Z$, $-E_V$ is nef$/W$. By the negativity lemma, $E_V\geq 0$, which implies (1). 
+Since $(W,B_W,\Mm)$ is lc, $a(E,W,B_W\Mm) \geqslant 0 $, and (2) follows from (1).  
+\end{proof}
+
+TODO: cone theorem
+\begin{thm}[Cone and contraction theorems for generalized lc pairs]\label{thm: cone and contraction theorem glc pair}
+Let $(X,B,\Mm)/U$ be an NQC lc g-pair and $\pi: X\rightarrow Z$ the associated morphism. Let $\{R_j\}_{j\in\Lambda}$ be the set of $(K_X+B+\Mm_X)$-negative extremal rays in $\overline{NE}(X/U)$ that are rational. Then:
+\begin{enumerate}
+    \item $$\overline{NE}(X/U)=\overline{NE}(X/U)_{K_X+B+\Mm_X\geq 0}+\sum_{j\in\Lambda} R_j.$$
+    In particular, any $(K_X+B+\Mm_X)$-negative extremal ray in $\overline{NE}(X/U)$ is rational.
+    \item Each $R_j$ is spanned by a rational curve $C_j$ such that $\pi(C_j)=\{pt\}$ and 
+    $$0<-(K_X+B+\Mm_X)\cdot C_j\leq 2\dim X.$$
+    \item For any ample$/U$ $\Rr$-divisor $A$ on $X$,
+    $$\Lambda_A:=\{j\in\Lambda\mid R_j\subset\overline{NE}(X/U)_{K_X+B+\Mm_X+A<0}\}$$
+    is a finite set. In particular, $\{R_j\}_{j\in\Lambda}$ is countable, and is a discrete subset in $\overline{NE}(X/U)_{K_X+B+\Mm_X+A<0}$. Moreover, we may write
+    $$\overline{NE}(X/U)=\overline{NE}(X/U)_{K_X+B+\Mm_X+A\geq 0}+\sum_{j\in\Lambda_A}R_j.$$
+    \item Assume that $\Mm_X$ is $\Rr$-Cartier. Let $R$ be a $(K_X+B+\Mm_X)$-negative extremal ray in $\overline{NE}(X/U)$. Then $R$ is a rational extremal ray. In particular, there exists a projective morphism $\cont_R: X\rightarrow Y$ over $U$ satisfying the following.
+    \begin{enumerate}
+        \item For any integral curve $C$ such that $\pi(C)$ is a point, $\cont_R(C)$ is a point if and only if $[C]\in R$.
+        \item $\mathcal{O}_Y\cong(\cont_R)_*\mathcal{O}_X$. In other words, $\cont_R$ is a contraction.
+        \item Let $L$ be a line bundle on $X$ such that $L\cdot R=0$. Then there exists a line bundle $L_Y$ on $Y$ such that $L\cong f^*L_Y$.
+    \end{enumerate}
+\end{enumerate}
+\end{thm}
+
+% TODO: contraction theorem for extremal face for lc gpair
+\begin{thm}[contraction extremal faces]\label{thm: contraction extremal face glc}
+  contraction extremal faces\wang{Is this true?}
+\end{thm}
+
+\begin{thm}[MMP for lc gpairs, {\cite[Theorem 4.2]{TX23}}]\label{thm: gen pair mmp mfs}
+		Let $ (X/Z,B,\Mm) $ be an NQC lc g-pair. Assume that $ (X,B,\Mm) $ has a minimal model in the sense of Birkar-Shokurov over $ Z $ or that $ K_X+B+M_{X} $ is not pseudo-effective over $ Z $. Let $ A $ be an effective $ \Rr $-Cartier $ \Rr $-divisor on $ X $ which is ample over $ Z $ such that $ \big( X/Z, (B+A),\Mm \big) $ is lc and $ K_X + B + A + M_{X} $ is nef over $Z$. Then there exists a $ (K_X + B + M_{X}) $-MMP over $Z$ with scaling of $A$ that terminates. In particular, $ (X,B,\Mm) $ has a minimal model or a Mori fiber space over $ Z $.
+\end{thm}
+\begin{remark}
+  See \cite[Proposition A.3 and Theorem 1.3]{LT22} for $\mathbb{Q}$-factorial case.
+\end{remark}
+
+\begin{thm}[MMP for lc gpairs, {\cite[Theorem 4.4]{TX23}}]\label{thm: gen pair mmp}
+		Let $ \big( X/Z,(B+A),\Mm \big) $ be an NQC lc g-pair, where $ A $ is an effective $ \mathbb{R} $-Cartier $\mathbb{R}$-divisor which is ample over $ Z $. If the divisor $K_X+B+A+M_{X}$ is pseudo-effective over $Z$, then there exists a $(K_X+B+A+M_{X})$-MMP over $Z$ which terminates with a good minimal model of $ \big( X,(B+A),\Mm \big) $ over $ Z $.
+\end{thm}
+
+\begin{thm}[extract a divisor, {\cite[Theorem 1.7]{LX22b}}]\label{lem: extracting divisor}
+Let $(X,B,\Mm)$ be a lc g-pair, and $E$ a prime divisor that is exceptional over $X$ such that $a(E,X,B,\Mm)\in [0,1)$. Then there exists a birational morphism $f: Z\to X$ which extracts $E$ such that $-E$ is ample over $X$.
+\end{thm}
+
+\wang{
+While running double scaling, we may extract a divisor $E$ with $a(X,B,\Mm)=1$, and theorem above is not enough. 
+}
+
 \section{Finiteness of models}
+
+\section{Double scaling}
+In this section we construct a special type of Sarkisov program, called the ``Sarkisov program with double scaling". As the notation is complicated and technical, we first illustrate our ideas.
+
+Replacing $W$ by further resolution,  we may assume that $\rho_X$ and $\rho_Y$ are morphisms:
+\begin{center}$\xymatrix{
+ & W\ar@{->}[dl]_{\rho_X}\ar@{->}[dr]^{\rho_Y}& \\
+      X \ar@{->}[d]_{\phi_X}\ar@{-->}[rr]^{f}   &  & Y\ar@{->}[d]^{\phi_Y} \\
+    S_X & &S_Y }$
+\end{center}
+and $\Mm$ decends to $W$, and  $(W,B_{W},\Mm) \geqslant (X,B_{X},\Mm), (Y,B_{Y},\Mm)$.
+Here $\phi_X: X\rightarrow S_X$ is a $(K_X+B_X,\Mm)$-Mori fiber space$/Z$ and $\phi_Y: Y\rightarrow S_Y$ is a $(K_Y+B_Y,Mm)$-Mori fiber space$/Z$. 
+
+We need to study the difference and similarity between $\phi_X: X\rightarrow S_X$ and $\phi_Y: Y\rightarrow S_Y$. A common strategy in birational geometry is to study the ample divisors on $X$ and $Y$. This works well in our setting, as $-(K_X+B_X+M_X)$ is ample over $S_X$ and  $-(K_Y+B_Y,Mm)$ is ample over $S_Y$. Therefore, we may pick general ample$/Z$ $\Rr$-divisors $L_X$ and $H_Y$ on $X$ and $Y$ respectively, such that
+\begin{itemize}
+    \item $L_X\sim_{\Rr,Z}-(K_X+B_X+M_X)+\phi_X^*A_{S_X}$ and
+    \item $H_Y\sim_{\Rr,Z}-(K_Y+B_Y+M_Y)+\phi_Y^*A_{S_Y}$, 
+\end{itemize}
+for some general ample $\Rr$-divisors $A_{S_X}$ and $A_{S_Y}$ on $S_X$ and $S_Y$ respectively. In particular, $L_W:=\rho_X^*L_X$ and $H_W:=\rho_Y^*H_Y$ are big and nef$/Z$, and we may define $H_X:=(\rho_X)_*H_W$ and $L_Y:=(\rho_Y)_*L_W$. We have
+\begin{itemize}
+    \item $K_X+B_X+L_X+0H_Y+M_X\sim_{\mathbb R,S_X}0$, and
+    \item $K_Y+B_Y+0L_Y+H_Y+M_Y\sim_{\mathbb R,S_Y}0$.
+
+\end{itemize}
+
+\subsection{Construct a Sarkisov link}
+
+\begin{cons}[Setting]\label{cons: setting for sarkisov link}
+This setting will be used in the rest of this section. We assume that
+\begin{itemize}
+    \item $X\rightarrow Z$ is a contraction,
+    \item $\rho: W\dashrightarrow X$ is a birational map,
+    \item $(W,B_W,\Mm)$ is a g-pair with associated nef$/Z$ $\bb$-divisor which decends to $W$,
+    \item $L_W$ and $H_W$ are two general big and nef$/Z$ $\Rr$-divisors on $W$, 
+    \item $(X,B,\Mm)$ is a g-pair, 
+    \item $\phi: X\rightarrow S$ is a $(K_X+B+M_X)$-Mori fiber space$/Z$,
+    \item $\Sigma$ is a $\phi$-vertical curve,
+    \item $L$ and $H$ are two $\Rr$-Cartier $\Rr$-divisors on $X$, and
+    \item $0<l\leq 1$ and $0\leq h\leq 1$ are two real numbers,
+\end{itemize} 
+such that
+\begin{enumerate}
+    \item $(W,B_W+2(L_W+H_W)+M_W)$ is $\Qq$-factorial lc and log smooth, 
+    % \item Maybe $(W,B_W+2(L_W+H_W)+M_W)$ is glc and log smooth, 
+      % TODO: other "terminalization"
+    \item $K_W+B_W+H_W+M_W$ is pseudo-effective$/Z$,
+    \item $(X,B,\Mm)$ is lc,
+    \item $(W,B_W+lL_W+hH_W,\Mm)\geq (X,B+lL+hH,\Mm)$. In particular, $\rho$ does not extract any divisor,
+    \item $B,L$ and $H$ are the birational transforms of $B_W,L_W$ and $H_W$ on $X$ respectively,
+    \item $K_X+B+lL+hH+M_X\sim_{\mathbb R,S}0$, and
+    \item $K_X+B+lL+hH+M_X$ is nef$/Z$.
+\end{enumerate}
+We illustrate this setting in the following diagram:
+\medskip
+
+\begin{center}$\xymatrix{
+  W\ar@{-->}[d]_{\rho}&\supset & B_W\ar@{-->}[d] &lL_W\ar@{-->}[d] &hH_W\ar@{-->}[d] &M_W\ar@{-->}[d] &\\
+      X \ar@{->}[d]^{\phi}&\supset & B &lL &hH &M_X  &\Sigma:\phi\text{-vertical}    \\
+    S & }$
+\end{center}
+\end{cons}
+
+\begin{defn}[Auxiliary constants and divisors]\label{defn: auxiliary invariants}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link},
+\begin{enumerate}
+    \item we define $$r:=\frac{H\cdot\Sigma}{L\cdot\Sigma}.$$
+    \item For any real number $t$, we define
+    $$D_W(t):=B_W+lL_W+hH_W+t(H_W-rL_W),$$ 
+and 
+$$D(t):=B+lL+hH+t(H-rL).$$
+
+\item We define $\Gamma$ to be the set of all real number $t$ satisfying the following:
+\begin{enumerate}
+    \item $0\leq t\leq\frac{l}{r}$,
+        \item for any prime divisor $E\subset W$,
+    $$a(E,W,D_W(t),\Mm)\leq a(E,X,D(t),\Mm),$$
+    and
+    \item $K_X+D(t)+M_X$ is nef$/Z$.
+\end{enumerate}
+\item We define $s:=\sup\{t\mid t\in\Gamma\}$.
+\item We define $l_Y:=l-rs$ and $h_Y:=h+s$.
+\end{enumerate}
+\end{defn}
+
+
+\begin{lem}\label{lem: sarkisov h<=1}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link} and Definition \ref{defn: auxiliary invariants}, then 
+\begin{enumerate}
+\item $r>0$ is well-defined,
+    \item either $\Ii=\{0\}$, or $\Ii$ is a closed interval,
+    \item $\Ii$ is non-empty and $s\in\Ii$, 
+    \item $l_Y=l$ if and only if $h_Y=h$, and
+    \item $\Ii\subset [0,1-h]$. In particular, $h_Y\leq 1$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+ \begin{enumerate}
+   \item Since $L_W$ and $H_W$ are general big and nef$/Z$ divisors on $W$, $L$ and $H$ are big$/Z$, hence ample$/S$. Thus $H\cdot\Sigma>0$ and $L\cdot\Sigma>0$, hence $r>0$ is well-defined.
+   \item By Definition \ref{defn: auxiliary invariants}(3), $0\in\Ii$ and $\Ii$ is closed and connected, which implies (2).
+   \item This follows from (2) and the definition of $s$.
+   \item This  follows from (1) and the definitions of $l_Y$ and $h_Y$.
+
+   \item Assume that (5) does not hold. By (2), there exists $t_0\in\Ii$ such that $1<h+t_0<2$. By Construction \ref{cons: setting for sarkisov link}(1), $(W,D_W(t_0),\Mm)$ is lc.
+
+Since $(K_X+D(t_0)+M_X)\cdot\Sigma=0$ and $H$ is big$/Z$, 
+$$(K_X+B+(l-t_0r)L+H+M_X)\cdot\Sigma=((K_X+D(t_0)+M_X)-(h+t_0-1)H)\cdot\Sigma<0.$$
+Thus $\phi$ is a $(K_X+B+(l-t_0r)L+H+M_X)$-Mori fiber space$/Z$. In particular, $K_X+B+H+M_X$ is not pseudo-effective$/Z$. Since $\rho$ does not extract any divisor, $K_W+B_W+H_W+M_W$ is not pseudo-effective$/Z$, which contradicts Construction \ref{cons: setting for sarkisov link}(2).
+ \end{enumerate} 
+\end{proof}
+
+\begin{cons}\label{cons: cases of sarkisov link with scaling}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link} and Definition \ref{defn: auxiliary invariants}. Then there are three possibilities for $s$:
+\begin{itemize}
+   \item[\textbf{Case 1}] $s=\frac{l}{r}$. In particular, $l_Y=0.$
+    \item[\textbf{Case 2}] 
+    \begin{itemize}
+        \item $s<\frac{l}{r}$. In particular, $l_Y>0$, and 
+        \item there exists $0<\epsilon_{0}\ll 1$ and a prime divisor $E\subset W$, such that $a(E,W,D_W(s+\epsilon),\Mm)>a(E,X,D(s+\epsilon),\Mm)$ for all $0<\epsilon<\epsilon_{0}$.
+    \end{itemize}
+        \item[\textbf{Case 3}] 
+    \begin{itemize}
+        \item $s<\frac{l}{r}$. In particular, $l_Y>0$, and 
+        \item there exists $0<\epsilon_{0}\ll 1$, such that for all $0<\epsilon<\epsilon_{0}$ 
+        \begin{itemize}
+            \item $a(E,W,D_W(s+\epsilon),\Mm)\leq a(E,X,D(s+\epsilon),\Mm)$ for any prime divisor $E\subset W$, and
+            \item $K_X+D(s+\epsilon),\Mm)$ is not nef$/Z$.
+        \end{itemize} 
+    \end{itemize}
+\end{itemize}
+\end{cons}
+
+
+\begin{thm}[Sarkisov link with double scaling]\label{thm: scaling sarkisov}
+Assumptions and notations as Construction \ref{cons: setting for sarkisov link} and Definition \ref{defn: auxiliary invariants}. The there exist
+\begin{itemize}
+    \item a birational map$/Z$ $\rho_Y: W\dashrightarrow Y$ which does not extract any divisor,
+    \item three $\Rr$-divisors $B_Y,L_Y$ and $H_Y$ on $Y$,
+    \item a $(K_Y+B_Y+M_Y)$-Mori fiber space$/Z$ $\phi_Y:Y\rightarrow S_Y$, and
+    \item a Sarkisov link$/Z$ $f: X\dashrightarrow Y$,
+\end{itemize}
+such that
+\begin{enumerate}
+\item $(Y,B_Y,\Mm)$ is a $\Qq$-factorial lc g-pair$/Z$,
+    \item $(W,B_W+l_YL_W+h_YH_W,\Mm)\geq (Y,B_Y+l_YL_Y+h_YH_Y,\Mm)$. In particular, $\rho_Y$ does not extract any divisor,
+    \item $B_Y,L_Y$ and $H_Y$ are the birational transforms of $B_W,L_W$ and $H_W$ on $Y$ respectively,
+    \item $K_Y+B_Y+l_YL_Y+h_YH_Y+M_Y\sim_{\Rr,S_Y}0$, 
+    \item $K_Y+B_Y+l_YL_Y+h_YH_Y+M_Y$ is nef$/Z$, 
+    \item for any $\phi_Y$-vertical curve $\Sigma_Y$ on $Y$, and $r=\frac{H\cdot\Sigma}{L\cdot\Sigma}\geq\frac{H_Y\cdot\Sigma_Y}{L_Y\cdot\Sigma_Y}>0$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+
+We prove the Theorem by considering the three different cases in Construction \ref{cons: cases of sarkisov link with scaling} separately.
+
+\medskip
+
+\noindent\textbf{Case 1}. In this case, we finish the proof by letting $\rho_Y:=\rho, Y:=X, B_Y:=B, L_Y:=L, H_Y:=H, M_Y:=M_X, \phi_Y:=\phi_X, S_Y:=S$, and $f:=\id_X$.
+
+\medskip
+
+\noindent\textbf{Case 2}. In this case, $a(E,W,D_W(s),\Mm)=a(E,X,D(s),\Mm),$ and $E$ is exceptional$/X$. Since $E\subset W$, 
+\wang{But $(X,D(s+\epsilon),\Mm)$ may not be lc}
+$$a(E,X,D(s+\epsilon),\Mm)<a(E,W,D_W(s+\epsilon),\Mm)\leq 1.$$
+
+By Lemma \ref{lem: extracting divisor}, there is an extraction $g: V\rightarrow X$ of $E$ such that $V$ is $\Qq$-factorial.  We let $B_V,L_V,H_V$ be the birational transforms of $B_W,L_W$ and $H_W$ on $V$ respectively, then we have
+\begin{align*}
+    &K_V+B_V+(l_Y-r\epsilon)L_V+(h_Y+\epsilon)H_V+M_V\\
+    =&g^*(K_X+B+(l_Y-r\epsilon)L+(h_Y+\epsilon)H+M_X).
+\end{align*}
+Moreover, since $a(E,X,D(s+\epsilon)+M_X)<1$, $\mult_E(B_V+(l_Y-r\epsilon)L_V+(h_Y+\epsilon)H_V)>0$. Thus we may pick a sufficiently small positive real number $0<\delta\ll\epsilon$, such that 
+$(V,\Delta_V+M_V)$ is lc,\wang{This may not lc} where
+$$K_V+\Delta_V+M_V:=g^*(K_X+B+(l_Y-r\epsilon-\delta)L+(h_Y+\epsilon)H+M_X).$$
+We may run a $(K_V+\Delta_V+M_V)$-MMP$/S$ $\psi: V\dashrightarrow Y$ which terminates with a Mori fiber space$/S$ $\phi_Y: Y\rightarrow S_Y$ by Theorem \ref{thm: gen pair mmp mfs}. Since $\rho(V/S)=\rho(V/X)+\rho(X/S)=2$ and $1=\rho(Y/S_Y)\leq\rho(V/S_Y)\leq\rho(V/S)$, there are two possibilities:
+
+\medskip
+
+\noindent\textbf{Case 2.1}. $\rho(V/Y)=0$. In this case $\psi$ is a sequence of flips, and we get a Sarkisov link$/Z$ $f:X\dashrightarrow Y$ of type I. Let $B_Y,L_Y$ and $H_Y$ be the birational transforms of $B_V,L_V$ and $H_V$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $\psi$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_V$ be the birational transform of $\Sigma_Y$ on $V$. Pick any $0<\delta'\ll\delta$ and let
+$$K_V+\Delta'_V+M_V:=g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X),$$
+then $\psi$ is also a $(K_V+\Delta'_V+M_V)$-MMP$/S$. Let $\Delta_Y'$ be the birational transform of $\Delta'_V$ on $Y$. Then
+\begin{align*}
+&g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\\
+=&(K_Y+\Delta_Y'+M_Y)\cdot\Sigma_Y<0
+\end{align*}
+Let $\delta'\rightarrow 0$, then we have
+$$g^*(K_X+B+(l_Y-r\epsilon)L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\leq 0.$$
+Since $g^*(K_X+B+l_YL+h_YH+M_X)\sim_{\mathbb R,S}0$, we deduce that
+$$g^*(H-rL)\cdot\Sigma_V\leq 0.$$
+Moreover, by our assumptions, $g^*(H-rL)=g^{-1}_*(H-rL)+eE$ for some real number $e>0$, and $\Sigma_V\not\subset E$. Thus
+\begin{align*}
+    (H_Y-rL_Y)\cdot\Sigma_Y&=g^{-1}_*(H-rL)\cdot\Sigma_V=(g^*(H-rL)-eE)\cdot\Sigma_V\\
+    &\leq g^*(H-rL)\cdot\Sigma_V\leq 0,
+\end{align*}
+which implies (6), and the theorem follows in this case.
+
+\medskip
+
+% \noindent\textbf{Case 2.2}. $\rho(V/Y)=1$. In this case, suppose that $U\rightarrow U'$ is the first divisorial contraction in $\psi$. Then $\rho(U'/S_Y)=\rho(U'/S)=1$, which implies that $U‘\rightarrow S$ is a Mori fiber space. Thus $U'=Y$ and $S\cong S_Y$, and the induced birational map $f:X\dashrightarrow Y$ is a Sarkisov link$/Z$ of type II. Let $B_Y,L_Y,H_Y$ be the birational transforms of $B_V,L_V$ and $H_V$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $\psi$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_V$ be the birational transform of $\Sigma_Y$ on $V$. Pick any $0<\delta'\ll\delta$ and let
+$$K_V+\Delta'_V+M_V:=g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X),$$
+then $\psi$ is also a $(K_V+\Delta'_V+M_V)$-MMP$/S$. Let $\Delta_Y'$ be the birational transform of $\Delta'_V$ on $Y$. Then
+\begin{align*}
+&g^*(K_X+B+(l_Y-r\epsilon-\delta')L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\\
+=&(K_Y+\Delta_Y'+M_Y)\cdot\Sigma_Y<0
+\end{align*}
+Let $\delta'\rightarrow 0$, then we have
+$$g^*(K_X+B+(l_Y-r\epsilon)L+(h_Y+\epsilon)H+M_X)\cdot\Sigma_V\leq 0.$$
+Since $g^*(K_X+B+l_YL+h_YH+M_X)\sim_{\mathbb R,S}0$, we deduce that
+$$g^*(H-rL)\cdot\Sigma_V\leq 0.$$
+Moreover, by our assumptions, $g^*(H-rL)=g^{-1}_*(H-rL)+eE$ for some real number $e>0$, and $\Sigma_V\not\subset E$. Thus
+\begin{align*}
+    (H_Y-rL_Y)\cdot\Sigma_Y&=g^{-1}_*(H-rL)\cdot\Sigma_V=(g^*(H-rL)-eE)\cdot\Sigma_V\\
+    &\leq g^*(H-rL)\cdot\Sigma_V\leq 0,
+\end{align*}
+which implies (6), and the theorem follows in this case.
+
+\medskip
+
+\noindent\textbf{Case 3}. In this case,
+ there exists a $(K_X+D(s+\epsilon)+M_X)$-negative extremal \wang{$(X,D(s+\epsilon),\Mm)$ may not be lc}ray $[C]$ on $X$. Since $(K_X+D(s+\epsilon)+M_X)\cdot\Sigma=0$, $[C]\not=[\Sigma]$. Let $P\subset\overline{NE}(X/Z)$ be the extremal face over $Z$ defined by all $(K_X+D(s+\epsilon)+M_X)$-non-positive irreducible curves. Then $P\not=[\Sigma]$, and hence there exists an extremal ray $[\Pi]$ such that $[\Sigma]$ and $[\Pi]$ span a two-dimensional face of $P$. By our construction, $(K_X+D(s+\epsilon)+M_X)\cdot\Pi<0$. Now for $0<\delta\ll 1$, we have
+$$(K_X+B+(l_Y-r\epsilon-\delta)L_X+(h_Y+\epsilon)H_X+M_X)\cdot\Sigma<0$$
+and
+$$(K_X+B+(l_Y-r\epsilon-\delta)L_X+(h_Y+\epsilon)H_X+M_X)\cdot\Pi<0.$$
+By Theorem \ref{thm: contraction extremal face glc}, there exists a contraction $\pi: X\rightarrow T$ of the extremal face of $\overline{NE}(X/Z)$ spanned by $[\Sigma]$ and $[\Pi]$. Then $\pi$ factors through $S$, and  $K_X+D(s)+M_X\sim_{\Rr,T}0$.
+
+Since $L,H$ are big$/Z$, $L,H$ are big$/T$. Therefore, if $K_{X}+D(s+\epsilon)+M_X$ is pseudo-effective$/T$, then $K_X+(1+\alpha)D(s+\epsilon)+M_X$ is big$/T$. By Theorem \ref{thm: gen pair mmp}, we may run a $(K_{X}+D(s+\epsilon)+M_X)$-MMP$/T$ with scaling of some ample$/T$ divisor, and this MMP$/T$ terminates. There are three cases:
+
+\medskip
+
+
+\noindent\textbf{Case 3.1}. After a sequence of flips $f: X\dashrightarrow Y$, the MMP$/T$ terminates with a Mori fiber space$/T$ $\phi_Y: Y\rightarrow S_Y$. Therefore, $f$ is a Sarkisov link$/Z$ of type IV.  Let $B_Y,L_Y,H_Y$ be the birational transforms of $B,L$ and $H$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $f$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_X$ be the birational transform of $\Sigma_Y$ on $X$. Since $\phi_Y$ is a $(K_Y+B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y+M_Y)$-Mori fiber space$/T$, 
+$$-(K_Y+B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y+M_Y)\cdot\Sigma_Y>0,$$
+which implies that
+$$-(K_X+D(s+\epsilon)+M_X)\cdot\Sigma_X>0.$$
+Since $K_X+D(s)+M_X\sim_{\Rr,T}0$, 
+$$-(K_X+D(s)+M_X)\cdot\Sigma_X=0,$$
+which implies that 
+$$(H_Y-rL_Y)\cdot\Sigma_Y=(H-rL)\cdot\Sigma_X<0.$$ 
+Thus $r>\frac{H_Y\cdot\Sigma_Y}{L_Y\cdot\Sigma_Y}$, which implies (6), and the theorem follows in this case.
+
+\medskip
+
+\noindent\textbf{Case 3.2}. After a sequence of flips $X\dashrightarrow U$, we get a divisorial contraction$/T$: $U\rightarrow Y$. Therefore $\rho(Y/T)=1$, which implies that the induced morphism $\phi_Y:=Y\rightarrow T$ is a Mori fiber space, and the induced birational map $f: X\dashrightarrow Y$ is a Sarkisov link$/Z$ of type III. Let $B_Y,L_Y,H_Y$ be the birational transforms of $B,L$ and $H$ on $Y$ respectively and $\rho_Y: W\dashrightarrow Y$ the induced morphism. By our constructions, (1)-(5) are clear, and we only left to show (6).
+
+For any general $\phi_Y$-vertical curve $\Sigma_Y$, $f$ is an isomorphism in a neighborhood of $\Sigma_Y$, and we may let $\Sigma_X$ be the birational transform of $\Sigma_Y$ on $X$. Since $-(K_X+D(s+\epsilon)+M_X)$ is nef$/T$ and $K_X+D(s)+M_X\sim_{\Rr,T}0$, we have
+$$-(K_X+D(s+\epsilon)+M_X)\cdot\Sigma_X\geq 0=-(K_X+D(s)+M_X)\cdot\Sigma_X,$$
+which implies that 
+$$(H_Y-rL_Y)\cdot\Sigma_Y=(H-rL)\cdot\Sigma_X\leq 0.$$ 
+Thus $r\geq\frac{H_Y\cdot\Sigma_Y}{L_Y\cdot\Sigma_Y}$, which implies (6), and the theorem follows in this case.
+
+\medskip
+
+\noindent\textbf{Case 3.3}. After a sequence of flips $f: X\dashrightarrow Y$, the MMP terminates with a minimal model $Y$ over $T$. Let $B_Y,L_Y,H_Y$ be the birational transforms of $B,L$ and $H$ on $Y$ respectively. Since $\Sigma$ is a general $\phi$-vertical curve, we may let $\Sigma'$ be the birational transform of $\Sigma$ on $Y$. Since $(K_{X}+D(s+\epsilon)+M_X)\cdot\Sigma=0$ and $(K_{X}+D(s)+M_X)\cdot\Sigma=0$, we have
+$$(K_Y+B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y+M_Y)\cdot\Sigma'=0$$
+and
+$$(K_Y+B_Y+l_YL_Y+h_YH_Y+M_Y)\cdot\Sigma'=0$$
+which implies that $(K_Y+B_Y+M_Y)\cdot\Sigma'<0$ and $r=\frac{H_Y\cdot\Sigma'}{L_Y\cdot\Sigma'}$. Since $\Sigma$ can be chosen to be any $\phi$-vertical curve, by Theorem \ref{thm: contraction extremal face glc}, there exists a contraction $\phi_Y:Y\rightarrow S_Y$ of $[\Sigma']$ such that $\phi_Y$ is a $(K_Y+B_Y+M_Y)$-Mori fiber space$/T$. Thus $f$ is a Sarkisov link$/Z$ of type IV.  We finish the proof by letting $\rho_Y: W\dashrightarrow Y$ be the induced birational map.
+\end{proof}
+
+\subsection{Behavior of invariants under a Sarkisov lins}
+
+\subsection{Run the Sarkisov program with double scaling}
+
+Construction
+
+Lemma of termination.
 
 \section{Proof of the main theorems}
 
@@ -485,13 +848,15 @@ C. Birkar, P. Cascini, C. D. Hacon and J. M\textsuperscript{c}Kernan, \textit{Ex
 
 \bibitem[LL22]{LL22} J.~Liu and Y. Luo, \textit{ACC for minimal log discrepancies of $\frac{5}{6}$-lc threefolds}, arXiv: 2207.04610v1.
 
+\bibitem[LT22]{LT22} V. Lazi\'c and N. Tsakanikas, \textit{Special MMP for log canonical generalised pairs (with an appendix joint with Xiaowei Jiang)},  Sel. Math. New Ser. 28, 89 (2022).
+
 \bibitem[LX21a]{LX21a} J.~Liu and L. Xiao, \textit{An optimal gap of minimal log discrepancies of threefold non-canonical singularities}, J. Pure Appl. Algebra \textbf{225} (2021), no. 9, 106674, 23 pp.
 
 \bibitem[LX21b]{LX21b} J. Liu and L. Xie, \textit{Divisors computing minimal log discrepancies on lc surfaces}, arXiv:2101.00138v2. to appear in Math. Proc. Camb. Philos. Soc.
 
 \bibitem[LX21c]{LX21c} J. Liu and L. Xie, \textit{Number of singular points on projective surfaces}, arXiv:2103.04522v1.
 
-
+\bibitem[LX22b]{LX22b} J. Liu and L. Xie, \textit{Semi-ampleness of generalized pairs}, arXiv:2210.01731v1.
 
 \bibitem[Nak04]{Nak04} N. Nakayama, \textit{Zariski-decomposition and abundance}, MSJ Memoirs, vol. 14, Mathematical Society of Japan, Tokyo, 2004.
 
@@ -515,6 +880,9 @@ C. Birkar, P. Cascini, C. D. Hacon and J. M\textsuperscript{c}Kernan, \textit{Ex
 \bibitem[Tot22]{Tot22} B. Totaro, \textit{Klt varieties with conjecturally minimal volume}, arXiv:2210.11354v2.
 
 \bibitem[TW21]{TW21} B. Totaro and C. Wang, \textit{Klt varieties of general type with small volume}, arXiv:2104.12200v4.
+
+
+\bibitem[TX23]{TX23} N. Tsakanikas and L. Xie, \textit{Remarks on the existence of minimal models of log canonical generalized pairs}, arXiv:2301.09186.
 \end{thebibliography}
 
 
