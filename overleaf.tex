@@ -307,6 +307,47 @@ Assume that
 Thent he induced birational map $f: X\dashrightarrow Y$ is given by a finite sequence of Sarkisov links$/Z$, i.e. $f$ can be written as $X_0\dashrightarrow X_1\dots\dashrightarrow X_n\cong Y$, where each $X_{i}\dashrightarrow X_{i+1}$ is a Sarkisov link$/Z$,
 \end{thm}
 
+\begin{defn}[Sarkisov links]
+Assume that
+\begin{itemize}
+    \item $X_1\rightarrow Z$ and $X_2\rightarrow Z$ are two contractions,
+    \item $(X_1,B_1+M_{X_1})$ and $(X_2,B_2+M_{X_2})$ are two gklt g-pairs with the same associated nef$/Z$ $\bb$-divisor $M$,
+    \item $\phi_1: X_1\rightarrow S_1$ is a $(K_{X_1}+B_1+M_{X_1})$-Mori fiber space$/Z$ and $\phi_2: X_2\rightarrow S_2$ is a $(K_{X_2}+B_2+M_{X_2})$-Mori fiber space$/Z$, 
+    \item there are two birational morphisms $W\rightarrow X_1$ and $W\rightarrow X_2$, and an effective $\Rr$-divisor $B_W$ on $W$, such that $B_1$ and $B_2$ are the pushforwards of $B_W$ on $X_1$ and $X_2$ respectively\wang{Is this necessary?}, and
+    \item  $f: X_1\dashrightarrow X_2$ is the induced birational map$/Z$.
+\end{itemize}
+Then 
+\begin{itemize}
+    \item $f$ is called a $(K_{X_1}+B_1+M_{X_1})$-\emph{Sarkisov link$/Z$ of type I}, or a \emph{Sarkisov link$/Z$ of type I}, if there exists an extraction $g: V\rightarrow X_1$, a sequence of flips $V\dashrightarrow X_2$ over $Z$, and an extremal contraction $S_2\rightarrow S_1$, such that the following diagram commutes:
+    \begin{center}$\xymatrix{
+ V\ar@{->}[d]_{g}\ar@{-->}[rr]& &X_2\ar@{->}[d]^{\phi_2} \\
+      X_1\ar@{-->}[rru]_{f}\ar@{->}[dr]_{\phi_1}   &  & S_2\ar@{->}[dl] \\
+    & S_1 &}$
+\end{center}
+\item $f$ is called a $(K_{X_1}+B_1+M_{X_1})$-\emph{Sarkisov link$/Z$ of type II}, or a \emph{Sarkisov link$/Z$ of type II}, if there exists an extraction $g: V\rightarrow X_1$, a sequence of flips $V\dashrightarrow U$ over $Z$, and a divisorial contraction $U\rightarrow X_2$, such that the following diagram commutes:
+\begin{center}$\xymatrix{
+ V\ar@{->}[d]_{g}\ar@{-->}[r]& U\ar@{->}[d] \\
+      X_1\ar@{-->}[r]_{f}\ar@{->}[d]_{\phi_1}    & X_2\ar@{->}[d]^{\phi_2} \\
+    S_1\ar@{->}[r]^{\cong}& S_2 }$
+\end{center}
+\item $f$ is called a $(K_{X_1}+B_1+M_{X_1})$-\emph{Sarkisov link$/Z$ of type III}, or a \emph{Sarkisov link$/Z$ of type III}, if there exists a sequence of flips $X_1\dashrightarrow U$ over $Z$, a divisorial contraction $U\rightarrow X_2$ and an extremal contraction $S_1\rightarrow S_2$, such that the following diagram commutes:
+\begin{center}$\xymatrix{
+ X_1\ar@{->}[d]_{\phi_1}\ar@{-->}[drr]^{f}\ar@{-->}[rr]& &U\ar@{->}[d] \\
+      S_1\ar@{->}[dr]   &  & X_2\ar@{->}[dl]^{\phi_2} \\
+    & S_2 &}$
+\end{center}
+
+\item $f$ is called a $(K_{X_1}+B_1+M_{X_1})$-\emph{Sarkisov link$/Z$ of type IV}, or a \emph{Sarkisov link$/Z$ of type IV}, if $f$ is a sequence of flips$/Z$, and there are two extremal contractions $S_1\rightarrow T$ and $S_2\rightarrow T$ over $Z$, such that the following diagram commutes:
+\begin{center}$\xymatrix{
+ X_1\ar@{-->}[rr]^{f}\ar@{->}[d]_{\phi_1}& &X_2\ar@{->}[d]^{\phi_2} \\
+      S_1\ar@{->}[dr]   &  & S_2\ar@{->}[dl] \\
+    & T&}$
+\end{center}
+\item $f$ is called a  $(K_{X_1}+B_1+M_{X_1})$-\emph{Sarkisov link}$/Z$, or a \emph{Sarkisov link}$/Z$, if it is a Sarkisov link$/Z$ of one of the four types above. We remark that we allow $f$ to be the identity map.
+\end{itemize}
+\end{defn}
+
+
 \begin{thm}[Generalized lc Fano varieties are Mori dream spaces]
     Let $(X,B,\Mm)/Z$ be an lc generalized pair such that $-(K_X+B+\Mm_X)$ is ample$/Z$. Then $X$ is a Mori dream space$/Z$. In particular, for any $\Rr$-Cartier $\Rr$-divisor $D$ on $X$, we may run a $D$-MMP$/Z$ which termiantes with either a good minimal model$/Z$ or a Mori fiber space$/Z$.
 \end{thm}
@@ -413,7 +454,7 @@ Let $W\rightarrow Z$ and $X\rightarrow Z$ be two contractions, $f:W\dashrightarr
 \end{itemize}
 then
 \begin{enumerate}
-    \item $a(E,X,B)\geq a(E,W,B+M_W)$ for any prime $\bb$-divisor $E$ over $X$. In other words, $(W,B+M_W)\geq (X,B,\Mm)$.
+    \item $a(E,X,B)\geq a(E,W,B_{W},\Mm)$ for any prime $\bb$-divisor $E$ over $X$. In other words, $(W,B_{W},\Mm)\geq (X,B,\Mm)$.
     \item $(X,B,\Mm)$ is lc.
 \end{enumerate}
 \end{prop}
@@ -456,7 +497,6 @@ Let $(X,B,\Mm)/U$ be an NQC lc g-pair and $\pi: X\rightarrow Z$ the associated m
 \end{enumerate}
 \end{thm}
 
-% TODO: contraction theorem for extremal face for lc gpair
 \begin{thm}[contraction extremal faces]\label{thm: contraction extremal face glc}
   contraction extremal faces\wang{Is this true?}
 \end{thm}
@@ -472,13 +512,25 @@ Let $(X,B,\Mm)/U$ be an NQC lc g-pair and $\pi: X\rightarrow Z$ the associated m
 		Let $ \big( X/Z,(B+A),\Mm \big) $ be an NQC lc g-pair, where $ A $ is an effective $ \mathbb{R} $-Cartier $\mathbb{R}$-divisor which is ample over $ Z $. If the divisor $K_X+B+A+M_{X}$ is pseudo-effective over $Z$, then there exists a $(K_X+B+A+M_{X})$-MMP over $Z$ which terminates with a good minimal model of $ \big( X,(B+A),\Mm \big) $ over $ Z $.
 \end{thm}
 
+TODO: need to determine $B_{W}$ 
+\begin{lem}\label{lem: higher model and mmp}
+Let $X\rightarrow Z$ be a contraction, $(X,B,\Mm_X)$ a ($\Qq$-factorial) lc g-pair$/Z$, and $f: X\dashrightarrow Y$ a $(K_X+B+M_X)$-non-positive map$/Z$ such that $f_*(K_X+B+M_X)=K_Y+B_Y+M_Y$. Then there is 
+\begin{itemize}
+    \item a resolution of indeterminacy $p: W\rightarrow X$ and $q: W\rightarrow Y$, and
+    \item a ($\Qq$-factorial) lc pair $(W,B_W,\Mm)$,
+\end{itemize}
+such that
+\begin{enumerate}
+    \item $q$ is $(K_W+B_W+M_W)$-non-positive and $q_*(K_W+B_W+M_W)=K_Y+B_Y+M_Y$,
+    \item $(W,B_W,\Mm)\geq (Y,B_Y,\Mm_Y)$,
+    \item $M=M_W$.
+\end{enumerate} 
+\end{lem}
+
 \begin{thm}[extract a divisor, {\cite[Theorem 1.7]{LX22b}}]\label{lem: extracting divisor}
 Let $(X,B,\Mm)$ be a lc g-pair, and $E$ a prime divisor that is exceptional over $X$ such that $a(E,X,B,\Mm)\in [0,1)$. Then there exists a birational morphism $f: Z\to X$ which extracts $E$ such that $-E$ is ample over $X$.
 \end{thm}
 
-\wang{
-While running double scaling, we may extract a divisor $E$ with $a(X,B,\Mm)=1$, and theorem above is not enough. 
-}
 
 \section{Finiteness of models}
 
@@ -618,7 +670,7 @@ Assumptions and notations as Construction \ref{cons: setting for sarkisov link} 
 Assumptions and notations as Construction \ref{cons: setting for sarkisov link} and Definition \ref{defn: auxiliary invariants}. The there exist
 \begin{itemize}
     \item a birational map$/Z$ $\rho_Y: W\dashrightarrow Y$ which does not extract any divisor,
-    \item three $\Rr$-divisors $B_Y,L_Y$ and $H_Y$ on $Y$,
+    \item three $\Rr$-divisors $B_Y,L_Y$ and $H_Y$ on $Y$,\wang{If $Y$ is not $\mathbb{Q}$-factorial, then how to show $L_{Y}$ and $H_{Y}$ are $\mathbb{R}$-Cartier divisor?}
     \item a $(K_Y+B_Y+M_Y)$-Mori fiber space$/Z$ $\phi_Y:Y\rightarrow S_Y$, and
     \item a Sarkisov link$/Z$ $f: X\dashrightarrow Y$,
 \end{itemize}
@@ -647,7 +699,7 @@ We prove the Theorem by considering the three different cases in Construction \r
 \wang{But $(X,D(s+\epsilon),\Mm)$ may not be lc}
 $$a(E,X,D(s+\epsilon),\Mm)<a(E,W,D_W(s+\epsilon),\Mm)\leq 1.$$
 
-By Lemma \ref{lem: extracting divisor}, there is an extraction $g: V\rightarrow X$ of $E$ such that $V$ is $\Qq$-factorial.  We let $B_V,L_V,H_V$ be the birational transforms of $B_W,L_W$ and $H_W$ on $V$ respectively, then we have
+By Lemma \ref{lem: extracting divisor},\wang{We need $(X,D(s+\epsilon),\Mm)$ to be lc. We only have $(X,D(s),\Mm)$ lc.} there is an extraction $g: V\rightarrow X$ of $E$ such that $V$ is $\Qq$-factorial.  We let $B_V,L_V,H_V$ be the birational transforms of $B_W,L_W$ and $H_W$ on $V$ respectively, then we have
 \begin{align*}
     &K_V+B_V+(l_Y-r\epsilon)L_V+(h_Y+\epsilon)H_V+M_V\\
     =&g^*(K_X+B+(l_Y-r\epsilon)L+(h_Y+\epsilon)H+M_X).
@@ -748,11 +800,115 @@ which implies that $(K_Y+B_Y+M_Y)\cdot\Sigma'<0$ and $r=\frac{H_Y\cdot\Sigma'}{L
 
 \subsection{Behavior of invariants under a Sarkisov lins}
 
+\begin{lem}\label{lem: sar scaling terminalization}
+Assumptions and notations as in Construction \ref{cons: setting for sarkisov link}, Definition \ref{defn: auxiliary invariants}, and Theorem \ref{thm: scaling sarkisov}. Then
+\begin{enumerate}
+    \item In \textbf{\rm\textbf{Case 2.1}}, $\rho(Y)-\rho(X)=1$.
+    \item In \textbf{\rm\textbf{Case 2.2}},
+    \begin{enumerate}
+        \item $\rho(X)=\rho(Y)$,
+        \item there is a prime divisor $F_0$ over $W$, such that 
+    \begin{align*}
+        &a(F_0,X,B+(l_Y-r\epsilon-\delta)L+(h_Y+\epsilon)H,\Mm_X)\\
+        <&a(F_0,Y,B_Y+(l_Y-r\epsilon-\delta)L_Y+(h_Y+\epsilon)H_Y,\Mm_Y),
+    \end{align*}
+    and
+    \item for any prime divisor $F$ over $W$,
+      \begin{align*}
+        &a(F,X,B+(l_Y-r\epsilon-\delta)L+(h_Y+\epsilon)H,\Mm_X)\\
+        \leq &a(F,Y,B_Y+(l_Y-r\epsilon-\delta)L_Y+(h_Y+\epsilon)H_Y,\Mm_Y).
+    \end{align*}
+    \end{enumerate}
+    \item In \textbf{\rm\textbf{Case 3}}, $$a(F,Y,B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y,\Mm_Y)\geq a(F,W,B_W(s+\epsilon),\Mm).$$
+    \item In \textbf{\rm\textbf{Case 3.1}}, $\frac{H\cdot\Sigma}{L\cdot\Sigma}>\frac{H_Y\cdot\Sigma_Y}{L_Y\cdot\Sigma_Y}$.
+    \item In \textbf{\rm\textbf{Case 3.2}}, $\rho(X)-\rho(Y)=1$.
+    \item In \textbf{\rm\textbf{Case 3.3}},
+    \begin{enumerate}
+        \item $\rho(X)=\rho(Y)$,
+        \item there is a prime divisor $F_0$ over $W$, such that 
+   $$a(F_0,Y,B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y,\Mm_Y)> a(F_0,X,B(s+\epsilon),\Mm_X),$$
+    and
+    \item for any prime divisor $F$ over $W$,
+   $$a(F,Y,B_Y+(l_Y-r\epsilon)L_Y+(h_Y+\epsilon)H_Y,\Mm_Y)\geq a(F,X,B(s+\epsilon),\Mm_X).$$
+    \end{enumerate}
+\end{enumerate}
+\end{lem}
+\begin{proof}
+(1)(4)(5) immediately follow from the proof of Theorem \ref{thm: scaling sarkisov}. (2) follows from the fact that in \textbf{\rm\textbf{Case 2.2}}, the Sarkisov link$/Z$ is constructed by running a $g^*(K_X+B+(l_Y-r\epsilon-\delta)L+(h_Y+\epsilon)H+M_X)$-MMP$/S$ and $X\not\cong Y$. (3)(6) follow from the fact that in \textbf{\rm\textbf{Case 3}}, the Sarkisov link$/Z$ is constructed by running a $(K_X+B(s+\epsilon)+M_X)$-MMP$/T$ and $X\not\cong Y$ in \textbf{\rm\textbf{Case 3.3}}.
+\end{proof}
+
 \subsection{Run the Sarkisov program with double scaling}
 
-Construction
+\begin{cons}[Sarkisov program with double scaling]\label{cons: sarkisov scaling}
+  Assume that $W\rightarrow Z$ is a contraction and $(W,B_W,\Mm)$ is a $\Qq$-factorial\wang{can we remove $\mathbb{Q}$-factoriality?} lc g-pair$/Z$ with nef$/Z$ $\bb$-divisor $M=M_W$, such that $K_W+B_W+M_W$ is not pseudo-effective$/Z$.
 
-Lemma of termination.
+Let $\rho: W\dashrightarrow X$ be a $(K_W+B_W+M_W)$-non-positive map$/Z$ and $\phi: X\rightarrow S$ a $(K_X+B+M_X)$-Mori fiber space$/Z$, where $B$ is the birational transform of $B_W$ on $X$. By Theorem \ref{thm: gen pair mmp}, a special choice of $\rho$ is when $\rho$ is a $(K_W+B_W+M_W)$-MMP$/Z$. By Lemma \ref{lem: higher model and mmp}, possibly taking a resolution of indeterminacy $p:W'\rightarrow W$ and $q:W'\rightarrow X$, we may assume that $W$ is smooth and $\rho$ is a morphism. 
+ Then $\phi$ is a $(K_{X}+B+M_{X})$-Mori fiber space$/Z$. In particular, $-(K_{X}+B+M_{X})$ is ample$/S$. Therefore, we may pick a general ample$/Z$ $\Rr$-divisor $A$ on $S$ such that $-(K_{X}+B+M_{X})+\phi^*A$ is ample$/Z$. We let $L$ be a general element of $|-(K_{X}+B+M_{X})+\phi^*A|_{\Rr/Z}$ and $L_W:=\rho^*L=(\rho^{-1})_*L$. Then $L_W$ is big and nef$/Z$, $K_{X}+B+L+M_X\sim_{\Rr,S}0$ and $K_{X}+B+L+M_{X}$ is nef$/Z$.
+ 
+ Finally, we pick a general big and nef$/Z$ $\mathbb{R}$-Cartier $\Rr$-divisor $H_W$ on $W$ such that
+\begin{itemize}
+\item $(W,B_W+2(L_W+H_W)+M_W)$ is $\Qq$-factorial lc, and
+    \item $K_W+B_W+H_W+M_W$ is pseudo-effective$/Z$, 
+\end{itemize}
+and pick a general $\phi$-vertical curve $\Sigma$ on $X$. We construct the \emph{Sarkisov program$/Z$ of $(X,B+M_{X})$ with scaling of $(L_W,H_W)$} in the following way. 
+\begin{itemize}
+    \item[\textbf{Step 1}] We define $X_0:=X,B_0:=B,\rho_0:=\rho,\phi_0:=\phi$, $L_0:=L, H_0:=\rho_*H_W$, $r_0:=\frac{H_0\cdot\Sigma}{L_0\cdot\Sigma}$, $\Sigma_0:=\Sigma$, and $(l_0,h_0):=(1,0)$.
+    \item[\textbf{Step 2}] For any integer $i\geq 0$, suppose that we already have
+    \begin{itemize}
+        \item a $\Qq$-factorial lc g-pair $(X_i,B_i,\Mm)$,
+        \item a birational map $\rho_i: W\dashrightarrow X_i$,
+        \item a $(K_{X_i}+B_i+M_{X_i})$-Mori fiber space$/Z$ $\phi_i: X_i\rightarrow S_i$,
+        \item two $\Rr$-Cartier $\Rr$-divisors $L_i$ and $H_i$ on $X_i$, 
+            \item two real number $0<l_i\leq 1$ and $0\leq h_i\leq 1$, 
+            \item a general $\phi_i$-vertical curve $\Sigma_i$, and
+            \item $r_i:=\frac{H_i\cdot\Sigma_i}{L_i\cdot\Sigma_i}>0$
+    \end{itemize}
+    such that
+    \begin{itemize}
+        \item $(W,B_W+l_iL_W+h_iH_W,\Mm)\geq (X_i,B_i+l_iL_i+h_iH_i,\Mm)$,
+        \item $B_i,L_i$ and $H_i$ are the birational transforms of $B_i,L_i$ and $H_i$ on $X_i$ respectively,
+        \item $K_{X_i}+B_i+l_iL_i+h_iH_i+M_{X_i}\sim_{\Rr,S_i}0$, and
+        \item $K_{X_i}+B_i+l_iL_i+h_iH_i+M_{X_i}$ is nef$/Z$,
+    \end{itemize}
+    then by Theorem \ref{thm: scaling sarkisov}, there exists 
+    \begin{itemize}
+        \item a $\Qq$-factorial lc g-pair $(X_{i+1},B_{i+1}+M_{X_{i+1}})$,
+        \item a birational map $\rho_{i+1}: W\dashrightarrow X_{i+1}$,
+        \item a $(K_{X_{i+1}}+B_{i+1}+M_{X_{i+1}})$-Mori fiber space$/Z$ $\phi_{i+1}: X_{i+1}\rightarrow S_{i+1}$,
+        \item two $\Rr$-Cartier $\Rr$-divisors $L_{i+1}$ and $H_{i+1}$ on $X_{i+1}$, 
+            \item two real number $0\leq l_{i+1}\leq l_i$ and $h_i\leq h_{i+1}\leq 1$,
+            \item a $\phi_{i+1}$-vertical curve $\Sigma_{i+1}$, 
+            \item a real number $r_{i+1}:=\frac{H_{i+1}\cdot\Sigma_{i+1}}{L_{i+1}\cdot\Sigma_{i+1}}$, and
+            \item a Sarkisov link$/Z$ $f_i: X_i\dashrightarrow X_{i+1}$ as in \textbf{Case 1}, or \textbf{Case 2.1}, or \textbf{Case 2.2}, or \textbf{Case 3.1}, or \textbf{Case 3.2}, or \textbf{Case 3.3} of Theorem \ref{thm: scaling sarkisov},
+    \end{itemize}
+    such that
+     \begin{itemize}
+        \item $(W,B_W+l_{i+1}L_W+h_{i+1}H_W,\Mm)\geq (X_{i+1},B_{i+1}+l_{i+1}L_{i+1}+h_{i+1}H_{i+1},\Mm)$,
+        \item $B_{i+1},L_{i+1}$ and $H_{i+1}$ are the birational transforms of $B_{i},L_{i}$ and $H_{i}$ on $X_{i+1}$ respectively,
+        \item $K_{X_{i+1}}+B_{i+1}+l_{i+1}L_{i+1}+h_{i+1}H_{i+1}+M_{X_{i+1}}\sim_{\Rr,S_{i+1}}0$, 
+        \item $K_{X_{i+1}}+B_{i+1}+l_{i+1}L_{i+1}+h_{i+1}H_{i+1}+M_{X_{i+1}}$ is nef$/Z$, and
+        \item $r_i\geq r_{i+1}>0$.
+    \end{itemize}
+    Notice that the assumptions hold when $i=0$.
+\item[\textbf{Step 3}] If $l_{i+1}=0$, we stop and let $n:=i+1$. Otherwise, we replace $i$ with $i+1$ and return to \textbf{Step 2}.
+\end{itemize}
+The following diagram gives the birational maps and Mori fiber spaces in this construction:
+\begin{center}$\xymatrix{
+ & & &W\ar@{-->}[dlll]_{\rho_0}\ar@{-->}[dll]^{\rho_1}\ar@{-->}[d]^{\rho_i}\ar@{-->}[drr]^{\rho_n}& & & \\
+      X_0 \ar@{-->}[r]_{f_0}\ar@{->}[d]^{\phi_0}&X_1\ar@{-->}[r]_{f_1}\ar@{->}[d]^{\phi_1}&\dots\ar@{-->}[r]&X_i\ar@{-->}[r]^{f_i}\ar@{->}[d]^{\phi_i}&\dots\ar@{-->}[r]&X_n\ar@{->}[d]^{\phi_n}\ar@{-->}[r]^{f_n}& \dots \\
+    S_0 & S_1 & & S_i& &S_n & }$
+\end{center}
+\end{cons}
+
+\begin{lem}\label{lem: sarkisov scaling terminate}
+Assumptions and notation as in Construction \ref{cons: sarkisov scaling}. Then
+\begin{enumerate}
+    \item there are only finitely many possibilities of $X_i$ up to isomorphism, and
+    \item the Sarkisov program of $(X,B+M_X)$ with scaling of $(L_W,H_W)$ terminates, i.e. there exists an integer $n>0$ such that $l_n=0$.
+\end{enumerate}
+\end{lem}
+TODO:  In this proof, we need finiteness of gwlcm  (generalized weak log minimal model)
+
 
 \section{Proof of the main theorems}
 
